@@ -23,7 +23,7 @@ class UserDataTest {
     @Test
     public void testUserData() {
         UserData userData1 = new UserData("농담곰", 1, 2, 3);
-        UserData userData2 = new UserData("농담곰", 1, 2, 3);
+        UserData userData2 = new UserData("말레이곰", 2, 4, 1);
         em.persist(userData1);
         em.persist(userData2);
 
@@ -39,3 +39,4 @@ class UserDataTest {
     }
 
 }
+

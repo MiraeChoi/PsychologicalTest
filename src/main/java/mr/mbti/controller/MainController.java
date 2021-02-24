@@ -1,13 +1,13 @@
 package mr.mbti.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
+@Controller
 public class MainController {
 
-    @GetMapping({"/", "main"})
+    @RequestMapping("/main")
     public String test1() {
-        return "hihi 한글도 잘 나오나";
+        return "home";
     }
 }

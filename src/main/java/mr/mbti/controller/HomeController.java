@@ -13,5 +13,11 @@ public class HomeController {
         log.info("Home Controller!!! 와아앙ㅇ");
         return "home";
     }
+
+    @RequestMapping("/types")
+    public String types() {
+        log.info("전체 유형 보기");
+        return "types";
+    }
 }
 

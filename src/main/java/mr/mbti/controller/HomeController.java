@@ -24,5 +24,10 @@ public class HomeController {
     public String typesESTP() {
         return "estp";
     }
+
+    @RequestMapping("/types/INTJ")
+    public String typesINTJ() {
+        return "intj";
+    }
 }
 

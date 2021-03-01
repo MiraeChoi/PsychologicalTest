@@ -19,5 +19,10 @@ public class HomeController {
         log.info("전체 유형 보기");
         return "types";
     }
+
+    @RequestMapping("/types/ESTP")
+    public String typesESTP() {
+        return "estp";
+    }
 }
 

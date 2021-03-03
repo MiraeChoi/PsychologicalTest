@@ -29,5 +29,11 @@ public class HomeController {
     public String typesINTJ() {
         return "intj";
     }
+
+    @RequestMapping(value = "/test", produces = "application/json;charset=utf8")
+    public String test() {
+        log.info("테스트 중이염");
+        return "";
+    }
 }
 

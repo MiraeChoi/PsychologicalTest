@@ -1,0 +1,24 @@
+body {
+    background-image: url('../img/ndg.png')
+}
+#__next {
+    margin: 0 auto;
+    width: 480px;
+}
+.global-wrapper {
+    background-color: white;
+}
+.ant-space-item {
+    display: inline;
+}
+.ant-row {
+    margin: 0 auto;
+    width: 400px;
+    display: flex;
+}
+.ant-col {
+    display: flex;
+}
+.ant-btn {
+    align: center;
+}

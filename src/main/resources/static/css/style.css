@@ -1,11 +1,29 @@
 body {
     background-image: url('../img/bgimg.jpg')
+    font-size: 8pt;
+}
+h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 15pt;
+    padding: 0 0 30px;
+}
+h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 15pt;
+}
+a {
+    color: #E12B7F;
 }
 #__next {
     margin: 0 auto;
     width: 480px;
 }
 .global-wrapper {
+    padding: 30px 0;
+    border: 3px solid #505050;
+    border-radius: 10px;
     background-color: white;
 }
 .ant-space-item {
@@ -21,4 +39,10 @@ body {
 }
 .ant-btn {
     align: center;
+}
+.ant-radio-group {
+    weight: 100px;
+    margin: 0 auto;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
 }

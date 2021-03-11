@@ -35,6 +35,7 @@
             font-weight: normal;
             font-size: 15pt;
             padding: 0 0 30px;
+            color: #E12B7F;
         }
         h2 {
             text-align: center;
@@ -42,7 +43,7 @@
             font-size: 15pt;
         }
         a {
-            color: #E12B7F;
+            text-decoration: none;
         }
         p {
             font-size: 10pt;
@@ -72,11 +73,25 @@
         .ant-col {
             width: 100px;
         }
-        .ant-btn {
+        .ant-btn-primary {
             align: center;
+            margin-top: 15px;
+            border: 0;
             border-radius: 10px;
             background-color: #E12B7F;
             color: white;
+            text-decoration: none;
+            font-size: 12pt;
+            height: 50px;
+        }
+        .ant-btn-primary:hover {
+            color: white;
+
+            background-color: #ED5396;
+            text-decoration: none;
+        }
+        .ant-btn-primary:focus {
+            border: none;
         }
         .ant-radio-group {
 
@@ -256,8 +271,8 @@
                     </div>
 
                     <div class="ant-space-item" style="margin-bottom:16px">
-                        <button style="width:100%" type="button" class="ant-btn ant-btn-primary ant-btn-lg">
-                            <a href="/">돼지유형 테스트하기</a>
+                        <button style="width:100%" type="button" class="ant-btn ant-btn-primary ant-btn-lg" onclick="/">
+                            농담곰유형 테스트하기
                         </button>
                     </div>
 

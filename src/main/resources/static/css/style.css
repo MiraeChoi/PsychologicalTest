@@ -1,11 +1,12 @@
 body {
-    background-image: url('../static/img/bgimg.jpg')
+    background-image: url('../img/bgimg.jpg')
 }
 h1 {
     text-align: center;
     font-weight: normal;
     font-size: 15pt;
     padding: 0 0 30px;
+    color: #E12B7F;
 }
 h2 {
     text-align: center;
@@ -13,7 +14,7 @@ h2 {
     font-size: 15pt;
 }
 a {
-    color: #E12B7F;
+    text-decoration: none;
 }
 p {
     font-size: 10pt;
@@ -36,25 +37,44 @@ p {
 .ant-row {
     margin: 0 auto;
     width: 400px;
+    flex-wrap: wrap;
     display: flex;
+    align-items: flex-start;
 }
 .ant-col {
     width: 100px;
-    display: flex;
 }
-.ant-btn {
+.ant-btn-primary {
     align: center;
+    margin-top: 15px;
+    border: 0;
     border-radius: 10px;
     background-color: #E12B7F;
     color: white;
+    text-decoration: none;
+    font-size: 12pt;
+    height: 50px;
+}
+.ant-btn-primary:hover {
+    color: white;
+
+    background-color: #ED5396;
+    text-decoration: none;
+}
+.ant-btn-primary:focus {
+    border: none;
 }
 .ant-radio-group {
+
+}
+.ant-radio-group-outline {
     weight: 100px;
     height: 30px;
     margin: 0 auto;
     border: 1px solid #D9D9D9;
     border-radius: 10px;
 }
-.ant-radio-button-input {
-
+.ant-radio-button-wrapper {
+    height: 30px;
+    border: 1px solid #D9D9D9;
 }

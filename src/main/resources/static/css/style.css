@@ -46,24 +46,30 @@ p {
 }
 .ant-btn {
     border: 0px;
-}
-.ant-btn-lg {
     align: center;
     margin-top: 15px;
-    border: 0;
     border-radius: 10px;
-    background-color: #E12B7F;
-    color: white;
     text-decoration: none;
     font-size: 12pt;
     height: 50px;
 }
-.ant-btn-lg:hover {
+.ant-btn-primary {
+    background-color: #E12B7F;
+    color: white;
+}
+.ant-btn-primary:hover {
     color: white;
     background-color: #ED5396;
     text-decoration: none;
 }
-.ant-btn-lg:focus {
+.ant-btn-primary:focus {
+    border: none;
+}
+.ant-btn-secondary {
+    background-color: white;
+    color: #E12B7F;
+}
+.ant-btn-secondary:focus {
     border: none;
 }
 .ant-space-horizontal {

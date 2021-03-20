@@ -10,7 +10,153 @@
     <noscript data-n-css=""></noscript>
 
     <style>
+body {
+    background-image: url('../img/bgimg.jpg')
+}
+h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 15pt;
+    padding: 0 0 30px;
+    color: #E12B7F;
+}
+h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 15pt;
+}
+a {
+    text-decoration: none;
+}
+p {
+    font-size: 10pt;
+    font-color: #E12B7F;
+    margin: 0 0 20px;
+}
+#__next {
+    margin: 0 auto;
+    width: 480px;
+}
+.global-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.global-wrapper {
+    padding: 30px 40px;
+    border: 3px solid #505050;
+    border-radius: 10px;
+    background-color: white;
+}
+.ant-space-item {
 
+}
+.ant-row {
+    margin: 0 auto;
+    width: 400px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+}
+.ant-col {
+    width: 100px;
+}
+.ant-btn {
+    align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 12pt;
+}
+.ant-btn-primary {
+    background-color: #E12B7F;
+    color: white;
+    margin-top: 15px;
+    height: 50px;
+}
+.ant-btn-primary:hover {
+    color: white;
+    background-color: #ED5396;
+}
+.ant-btn-primary:focus {
+    border: none;
+}
+.ant-btn-secondary {
+    background-color: white;
+    border: 3px solid #E12B7F;
+    margin-top: 15px;
+    height: 50px;
+}
+.ant-btn-secondary>a {
+    color: #E12B7F;
+}
+.ant-btn-secondary>a:hover {
+    color: #ED5396;
+}
+.ant-btn-q {
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #D3D3D3;
+    background-color: white;
+    margin-bottom: 8px;
+    padding: 15px 30px;
+    text-align: left;
+    line-height: 150%;
+}
+.ant-btn-q:hover {
+    border: 3px solid #E12B7F;
+    color: #E12B7F;
+}
+.prev_next {
+    width: 50px;
+    font-weight: bold;
+    font-size: 20pt;
+    display: inline;
+    text-align: justify;
+}
+.result {
+    margin-bottom: 16px;
+}
+.question {
+    line-height: 150%;
+}
+.ant-space-horizontal {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.ant-radio-group-outline {
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.ant-radio-button-wrapper {
+    weight: 100px;
+    height: 20px;
+    padding: 5px 13px 5px 13px;
+}
+.ant-radio-button-wrapper:first-child {
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #D9D9D9;
+}
+.ant-radio-button-wrapper:nth-child(2) {
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #D9D9D9;
+    border-left: 0;
+}
+.ant-radio-button-wrapper>span {
+    font-size: 10pt;
+}
+.ant-space-align-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-share {
+    background-color: white;
+}
+.ant-layout-footer {
+    margin-top: 40px;
+    font-size: 10pt;
+    text-align: center;
+}
     </style>
 </head>
 
@@ -41,10 +187,10 @@
     <div id="__next">
         <section class="ant-layout">
             <header class="ant-layout-header global-header">
-                <div class="prev_next">
-                    <div class="ant-btn-q"><</div>
-                    <h1><a>🐽 농담곰유형테스트</a></h1>
-                    <div class="ant-btn-q">></div>
+                <div>
+                    <div class="ant-btn-q prev_next"><</div>
+                    <h1 style="border:3px solid red; width:100px; display:inline;"><a>🐽 농담곰유형테스트</a></h1>
+                    <div class="ant-btn-q prev_next">></div>
                 </div>
             </header>
 
@@ -74,7 +220,6 @@
                         <font color="#E12B7F">✓</font> 다른 친한 동료에게 햄버거를 먹자고 한다.
                     </button>
                 </div>
-
             </main>
 
             <div style="width:100%;display:flex;place-content:center">

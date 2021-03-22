@@ -14,10 +14,8 @@ body {
     background-image: url('../img/bgimg.jpg')
 }
 h1 {
-    text-align: center;
     font-weight: normal;
     font-size: 15pt;
-    vertical-align: bottom;
     color: #E12B7F;
 }
 h2 {
@@ -38,18 +36,16 @@ p {
     width: 480px;
 }
 .global-header {
-
+    height: 54px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    border: 3px solid blue;
 }
 .global-wrapper {
     padding: 30px 40px;
     border: 3px solid #505050;
     border-radius: 10px;
     background-color: white;
-}
-.ant-space-item {
-
 }
 .ant-row {
     margin: 0 auto;
@@ -101,18 +97,25 @@ p {
     padding: 15px 30px;
     text-align: left;
     line-height: 150%;
-
 }
 .ant-btn-q:hover {
     border: 3px solid #E12B7F;
     color: #E12B7F;
 }
-.prev_next {
+.page_btn {
     width: 50px;
-    font-weight: bold;
+    height: 48px;
+    border-radius: 10px;
+    border: 3px solid #D3D3D3;
     font-size: 20pt;
-    display: inline;
-    text-align: justify;
+    text-align: center;
+    line-height: 48px;
+}
+.prev_page {
+    float: left;
+}
+.next_page {
+    float: right;
 }
 .result {
     margin-bottom: 16px;
@@ -190,9 +193,9 @@ p {
         <section class="ant-layout">
             <header class="ant-layout-header global-header">
                 <div>
-                    <div class="ant-btn-q prev_next"><</div>
-                    <h1 style="border:3px solid red; width:100px; display:inline;"><a>🐽 농담곰유형테스트</a></h1>
-                    <div class="ant-btn-q prev_next">></div>
+                    <div class="page_btn prev_page"><</div>
+                    <h1 style="border:3px solid red; display:inline;"><a>🐽 농담곰유형테스트</a></h1>
+                    <div class="page_btn next_page">></div>
                 </div>
             </header>
 

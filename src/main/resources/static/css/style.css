@@ -2,10 +2,8 @@ body {
     background-image: url('../img/bgimg.jpg')
 }
 h1 {
-    text-align: center;
     font-weight: normal;
     font-size: 15pt;
-    padding: 0 0 30px;
     color: #E12B7F;
 }
 h2 {
@@ -19,20 +17,36 @@ a {
 p {
     font-size: 10pt;
     font-color: #E12B7F;
-    margin: 0 0 20px;
+
 }
 #__next {
     margin: 0 auto;
     width: 480px;
+}
+.bar-light-gray {
+    width: 100%;
+    height: 8px;
+    border-radius: 8px;
+    background-color: #F5F5F5;
+    margin-bottom: 8px;
+}
+.bar-hot-pink {
+    width: 0%;
+    height: 8px;
+    border-radius: 8px;
+    background-color: #E12B7F;
+}
+.global-header {
+    weight: 480px;
+    height: 54px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 .global-wrapper {
     padding: 30px 40px;
     border: 3px solid #505050;
     border-radius: 10px;
     background-color: white;
-}
-.ant-space-item {
-    display: inline;
 }
 .ant-row {
     margin: 0 auto;
@@ -44,9 +58,6 @@ p {
 .ant-col {
     width: 100px;
 }
-.prev_next {
-    display: flex;
-}
 .ant-btn {
     align: center;
     border-radius: 10px;
@@ -55,21 +66,19 @@ p {
 }
 .ant-btn-primary {
     background-color: #E12B7F;
+    border: 3px solid #E12B7F;
     color: white;
-    margin-top: 15px;
+    margin-top: 10px;
     height: 50px;
 }
 .ant-btn-primary:hover {
     color: white;
     background-color: #ED5396;
-}
-.ant-btn-primary:focus {
-    border: none;
+    border: 3px solid #ED5396;
 }
 .ant-btn-secondary {
     background-color: white;
     border: 3px solid #E12B7F;
-    margin-top: 15px;
     height: 50px;
 }
 .ant-btn-secondary>a {
@@ -80,6 +89,7 @@ p {
 }
 .ant-btn-q {
     height: auto;
+    border-radius: 10px;
     border: 3px solid #D3D3D3;
     background-color: white;
     margin-bottom: 8px;
@@ -91,8 +101,21 @@ p {
     border: 3px solid #E12B7F;
     color: #E12B7F;
 }
-.result {
-    margin-bottom: 16px;
+.page_btn {
+    width: 50px;
+    height: 48px;
+    border-radius: 10px;
+    border: 3px solid #D3D3D3;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 48px;
+    background-color: white;
+}
+.prev_page {
+    float: left;
+}
+.next_page {
+    float: right;
 }
 .question {
     line-height: 150%;

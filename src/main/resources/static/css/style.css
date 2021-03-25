@@ -13,11 +13,14 @@ h2 {
 }
 a {
     text-decoration: none;
+    border: 0;
+}
+a:focus {
+    outline: 0;
 }
 p {
     font-size: 10pt;
     font-color: #E12B7F;
-
 }
 #__next {
     margin: 0 auto;
@@ -64,6 +67,9 @@ p {
     text-decoration: none;
     font-size: 12pt;
 }
+.ant-btn:focus {
+    outline: 0;
+}
 .ant-btn-primary {
     background-color: #E12B7F;
     border: 3px solid #E12B7F;
@@ -100,6 +106,11 @@ p {
 .ant-btn-q:hover {
     border: 3px solid #E12B7F;
     color: #E12B7F;
+}
+.ant-btn-q:focus {
+    border: 3px solid #E12B7F;
+    color: #E12B7F;
+    outline: 0;
 }
 .page_btn {
     width: 50px;
@@ -153,6 +164,7 @@ p {
 }
 .btn-share {
     background-color: white;
+    border: 0;
 }
 .ant-layout-footer {
     margin-top: 40px;

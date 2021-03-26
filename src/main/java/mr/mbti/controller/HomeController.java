@@ -33,7 +33,7 @@ public class HomeController {
     @RequestMapping(value = "/test", produces = "application/json;charset=utf8")
     public String test() {
         log.info("테스트 중이염");
-        return "question";
+        return "question/q01";
     }
 }
 

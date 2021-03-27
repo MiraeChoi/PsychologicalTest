@@ -35,5 +35,11 @@ public class HomeController {
         log.info("테스트 중이염");
         return "question/q01";
     }
+
+    @RequestMapping(value = "/test2", produces = "application/json;charset=utf8")
+    public String test2() {
+        log.info("테스트 중이염");
+        return "question/q02";
+    }
 }
 

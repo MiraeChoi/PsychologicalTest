@@ -12,6 +12,16 @@
     <style>
 
     </style>
+
+    <script>
+        function nextq() {
+            alert("넘어간당");
+            var main = document.getElementById("ant-layout-content");
+            var tag1 = "이름 : <input type='text' />";
+
+            document.getElementById("__next").innerHTML = tag1;
+        }
+    </script>
 </head>
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>
@@ -48,7 +58,7 @@
                 </div>
             </header>
 
-            <main class="ant-layout-content">
+            <main class="ant-layout-content" id="ant-layout-content">
                 <div class="bar-light-gray">
                     <div class="bar-hot-pink"></div>
                 </div>
@@ -64,7 +74,7 @@
                 </div>
 
                 <div class="ant-space-item" style="margin-bottom:16px">
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q">
+                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextq()">
                         <font color="#E12B7F">✓</font> 단골 가게, 단골 메뉴들이 정해져 있고 거의 그 안에서 주문한다.
                     </button>
                     <button style="width:100%" type="button" class="ant-btn ant-btn-q">

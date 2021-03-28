@@ -13,13 +13,19 @@
 
     </style>
 
-    <script>
-        function nextq() {
-            alert("넘어간당");
-            var main = document.getElementById("ant-layout-content");
-            var tag1 = "이름 : <input type='text' />";
+<!--    <script>-->
+<!--        function nextq() {-->
+<!--            alert("넘어간당");-->
+<!--            var main = document.getElementById("ant-layout-content");-->
+<!--            var tag1 = "이름 : <input type='text' />";-->
 
-            document.getElementById("__next").innerHTML = tag1;
+<!--            document.getElementById("__next").innerHTML = tag1;-->
+<!--        }-->
+<!--    </script>-->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        function nextq() {
+            $("#ant-layout-content").load("q03.html");
         }
     </script>
 </head>

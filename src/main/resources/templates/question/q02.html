@@ -23,29 +23,28 @@
 <!--        }-->
 <!--    </script>-->
 <!--    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
-<!--    <script src="q03.html"></script>-->
 <!--    <script src="${pageContext.request.contextPath}/jquery-3.6.0.min.js"></script>-->
-<!--    <script>-->
-<!--        function nextq() {-->
-<!--            alert("넘어간당");-->
-
-<!--            document.getElementById("ant-layout-content").innerHTML='<object type="text/html" data="q03.html"></object>';-->
-<!--        }-->
-<!--    </script>-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="q03.js"></script>
     <script>
         function nextq() {
-            alert("들어왔단다");
-            $.ajax({
-                url : "q03.html",
-                success : function(result) {
-                    $("#ant-layout-content").html(result);
-                    alert("우하하");
-                }
-            });
+            alert("넘어간당");
+            document.getElementById("ant-layout-content").innerHTML='<iframe src="http://naver.com/" width="480px" seamless></iframe>';
         }
     </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--    <script>-->
+<!--        function nextq() {-->
+<!--            alert("들어왔단다");-->
+<!--            $.ajax({-->
+<!--                url : "q03.html",-->
+<!--                success : function(result) {-->
+<!--                    $('#ant-layout-content').html(result);-->
+<!--                    alert("우하하");-->
+<!--                }-->
+<!--            });-->
+<!--        }-->
+<!--    </script>-->
 </head>
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>

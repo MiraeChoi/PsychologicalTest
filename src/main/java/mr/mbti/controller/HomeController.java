@@ -30,8 +30,8 @@ public class HomeController {
         return "intj";
     }
 
-    @RequestMapping(value = "/test", produces = "application/json;charset=utf8")
-    public String test() {
+    @RequestMapping(value = "/test1", produces = "application/json;charset=utf8")
+    public String test1() {
         log.info("Q1");
         return "question/q01";
     }

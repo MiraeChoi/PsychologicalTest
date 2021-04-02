@@ -107,7 +107,7 @@ p {
     border: 3px solid #E12B7F;
     color: #E12B7F;
 }
-.ant-btn-q:focus {
+.ant-btn-q:visited {
     border: 3px solid #E12B7F;
     color: #E12B7F;
     outline: 0;
@@ -122,7 +122,7 @@ p {
     line-height: 48px;
     background-color: white;
 }
-.page_btn[disabled] {
+.page_btn:disabled {
     border: 3px solid #D9D9D9;
     background-color: #F5F5F5;
     color: #B8B8B8;

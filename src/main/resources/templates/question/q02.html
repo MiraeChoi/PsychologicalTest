@@ -23,13 +23,31 @@
 <!--    </script>-->
 <!--    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
 <!--    <script src="${pageContext.request.contextPath}/jquery-3.6.0.min.js"></script>-->
-    <script src="q03.js"></script>
-<!--    <script>-->
-<!--        function nextq() {-->
-<!--            alert("넘어간당");-->
-<!--                document.getElementById("ant-layout-content").innerHTML='<iframe src="q03.html" width="480px" frameborder="0"></iframe>';-->
-<!--        }-->
-<!--    </script>-->
+    <script>
+        window.onload = function() {
+            if(sessionStorage.getItem('q01') != null) {
+
+            }
+        }
+
+        function 1_nextq() {
+            if(sessionStorage.getItem('q01') != null) {
+                sessionStorage.removeItem('q01');
+            }
+            sessionStorage.setItem('Q01_A', 1);
+
+            location.href = '/test3';
+        }
+
+        function 2_nextq() {
+            if(sessionStorage.getItem('q01') != null) {
+                sessionStorage.removeItem('q01');
+            }
+            sessionStorage.setItem('Q01_A', 2);
+
+            location.href = '/test3';
+        }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--    <script>-->
 <!--        function nextq() {-->
@@ -95,10 +113,10 @@
                 </div>
 
                 <div class="ant-space-item" style="margin-bottom:16px">
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="location.href='/test3'">
+                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="1_nextq();">
                         <font color="#E12B7F">✓</font> 단골 가게, 단골 메뉴들이 정해져 있고 거의 그 안에서 주문한다.
                     </button>
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q">
+                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="2_nextq();">
                         <font color="#E12B7F">✓</font> 그때그때 당기는 메뉴로 검색해서 주문한다.
                     </button>
                     <button style="width:100%" type="button" class="ant-btn ant-btn-q">

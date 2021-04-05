@@ -41,6 +41,52 @@
 <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async=""></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
+<script>
+    window.onload = function() {
+        var q02 = sessionStorage.getItem('Q01_A');
+        if(q02 != null) {
+            var id = "btn" + sessionStorage.getItem('Q01_A');
+
+            document.getElementById(id).style.border="3px solid #E12B7F";
+            document.getElementById(id).style.color="#E12B7F";
+            document.getElementById(id).style.outline="0";
+        }
+    }
+
+    function a1next() {
+        if(sessionStorage.getItem('Q01_A') != null) {
+            sessionStorage.removeItem('Q01_A');
+        }
+        sessionStorage.setItem('Q01_A', 1);
+        location.href = '/test3';
+    }
+
+    function a2next() {
+        if(sessionStorage.getItem('Q01_A') != null) {
+            sessionStorage.removeItem('Q01_A');
+        }
+        sessionStorage.setItem('Q01_A', 2);
+
+        location.href = '/test3';
+    }
+    function a3next() {
+        if(sessionStorage.getItem('Q01_A') != null) {
+            sessionStorage.removeItem('Q01_A');
+        }
+        sessionStorage.setItem('Q01_A', 3);
+
+        location.href = '/test3';
+    }
+    function a4next() {
+        if(sessionStorage.getItem('Q01_A') != null) {
+            sessionStorage.removeItem('Q01_A');
+        }
+        sessionStorage.setItem('Q01_A', 4);
+
+        location.href = '/test3';
+    }
+</script>
+
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
     <div id="__next">
         <section class="ant-layout">
@@ -67,18 +113,18 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="ant-space-item" style="margin-bottom:16px">
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="location.href='/test2'">
+                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn1" onclick="a1next();">
                         <font color="#E12B7F">✓</font> 사람들에게 햄버거 먹자고 어필한다.
                     </button>
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q">
+                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn2" onclick="a2next();">
                         <font color="#E12B7F">✓</font> 선약이 있다고 하고 혼자 햄버거 먹으러 간다.
                     </button>
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q">
+                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn3" onclick="a3next();">
                         <font color="#E12B7F">✓</font> 사람들이 원하니 그냥 김치찌개 먹고 저녁에 햄버거 먹어야지.
                     </button>
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q">
+                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn4" onclick="a4next();">
                         <font color="#E12B7F">✓</font> 다른 친한 동료에게 햄버거를 먹자고 한다.
                     </button>
                 </div>

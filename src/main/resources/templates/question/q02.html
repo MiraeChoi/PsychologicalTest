@@ -12,30 +12,34 @@
     <style>
 
     </style>
-<!--    <script>-->
-<!--        function nextq() {-->
-<!--            alert("넘어간당");-->
-<!--            var main = document.getElementById("ant-layout-content");-->
-<!--            var tag1 = "이름 : <input type='text' />";-->
+    <!--    <script>-->
+    <!--        function nextq() {-->
+    <!--            alert("넘어간당");-->
+    <!--            var main = document.getElementById("ant-layout-content");-->
+    <!--            var tag1 = "이름 : <input type='text' />";-->
 
-<!--            document.getElementById("__next").innerHTML = tag1;-->
-<!--        }-->
-<!--    </script>-->
-<!--    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
-<!--    <script src="${pageContext.request.contextPath}/jquery-3.6.0.min.js"></script>-->
+    <!--            document.getElementById("__next").innerHTML = tag1;-->
+    <!--        }-->
+    <!--    </script>-->
+    <!--    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <!--    <script src="${pageContext.request.contextPath}/jquery-3.6.0.min.js"></script>-->
     <script>
         window.onload = function() {
             var q02 = sessionStorage.getItem('Q02_A');
-            alert("하하" + q02);
             if(q02 != null) {
-                document.getElementById("btn1").style("border: 3px solid #E12B7F; color: #E12B7F; outline: 0;");
+                var id = "btn" + sessionStorage.getItem('Q02_A');
+
+                document.getElementById(id).style.border="3px solid #E12B7F";
+                document.getElementById(id).style.color="#E12B7F";
+                document.getElementById(id).style.outline="0";
             }
         }
 
         function a1next() {
-        if(sessionStorage.getItem('Q02_A') != null) {
+            if(sessionStorage.getItem('Q02_A') != null) {
+                sessionStorage.removeItem('Q02_A');
+            }
             sessionStorage.setItem('Q02_A', 1);
-        }
             location.href = '/test3';
         }
 
@@ -47,20 +51,36 @@
 
             location.href = '/test3';
         }
+        function a3next() {
+            if(sessionStorage.getItem('Q02_A') != null) {
+                sessionStorage.removeItem('Q02_A');
+            }
+            sessionStorage.setItem('Q02_A', 3);
+
+            location.href = '/test3';
+        }
+        function a4next() {
+            if(sessionStorage.getItem('Q02_A') != null) {
+                sessionStorage.removeItem('Q02_A');
+            }
+            sessionStorage.setItem('Q02_A', 4);
+
+            location.href = '/test3';
+        }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!--    <script>-->
-<!--        function nextq() {-->
-<!--            alert("들어왔단다");-->
-<!--            $.ajax({-->
-<!--                url : "q03.html",-->
-<!--                success : function(result) {-->
-<!--                    $('#ant-layout-content').html(result);-->
-<!--                    alert("우하하");-->
-<!--                }-->
-<!--            });-->
-<!--        }-->
-<!--    </script>-->
+    <!--    <script>-->
+    <!--        function nextq() {-->
+    <!--            alert("들어왔단다");-->
+    <!--            $.ajax({-->
+    <!--                url : "q03.html",-->
+    <!--                success : function(result) {-->
+    <!--                    $('#ant-layout-content').html(result);-->
+    <!--                    alert("우하하");-->
+    <!--                }-->
+    <!--            });-->
+    <!--        }-->
+    <!--    </script>-->
 </head>
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>
@@ -87,66 +107,66 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
-    <div id="__next">
-        <section class="ant-layout">
-            <header class="ant-layout-header global-header">
-                <div>
-                    <div class="page_btn prev_page" onclick="location.href='/test1'"><</div>
-                    <h1 style="display:inline; position:relative; top:13px;"><a>🐽 농담곰유형테스트</a></h1>
-                    <div class="page_btn next_page" onclick="location.href='/test3'">></div>
-                </div>
-            </header>
-
-            <main class="ant-layout-content" id="ant-layout-content">
-                <div class="bar-light-gray">
-                    <div class="bar-hot-pink"></div>
-                </div>
-<!--                <svg width="480" height="50"></svg>-->
-                <div>
-                    <div class="ant-space-item" style="margin-bottom:16px">
-                        <div class="global-wrapper result question" style="text-align:center">
-                            <center>
-                                배달 앱에서 가게를 고르는 스타일은?
-                            </center>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ant-space-item" style="margin-bottom:16px">
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn1" onclick="a1next();">
-                        <font color="#E12B7F">✓</font> 단골 가게, 단골 메뉴들이 정해져 있고 거의 그 안에서 주문한다.
-                    </button>
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="a2next();">
-                        <font color="#E12B7F">✓</font> 그때그때 당기는 메뉴로 검색해서 주문한다.
-                    </button>
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q">
-                        <font color="#E12B7F">✓</font> 쿠폰이 있거나 배달비 싸고 빨리 오는 곳 위주로 주문한다.
-                    </button>
-                    <button style="width:100%" type="button" class="ant-btn ant-btn-q">
-                        <font color="#E12B7F">✓</font> 가게 목록을 탐방하며 느낌이 가는 곳을 고른다.
-                    </button>
-                </div>
-            </main>
-
-            <div style="width:100%;display:flex;place-content:center">
-                <ins class="kakao_ad_area" style="display:none" data-ad-unit="DAN-92tJj5t6h8KDpfaP" data-ad-width="300" data-ad-height="250"></ins>
-            </div>
-            <br/>
+<div id="__next">
+    <section class="ant-layout">
+        <header class="ant-layout-header global-header">
             <div>
-                <div class="">
-                    <div style="width:100%;display:flex;place-content:center">
-                        <ins class="kakao_ad_area" style="display:none" data-ad-unit="DAN-6G5XCKZRhPvlwaTa" data-ad-width="320" data-ad-height="100"></ins>
+                <div class="page_btn prev_page" onclick="location.href='/test1'"><</div>
+                <h1 style="display:inline; position:relative; top:13px;"><a>🐽 농담곰유형테스트</a></h1>
+                <div class="page_btn next_page" onclick="location.href='/test3'">></div>
+            </div>
+        </header>
+
+        <main class="ant-layout-content" id="ant-layout-content">
+            <div class="bar-light-gray">
+                <div class="bar-hot-pink"></div>
+            </div>
+            <!--                <svg width="480" height="50"></svg>-->
+            <div>
+                <div class="ant-space-item" style="margin-bottom:16px">
+                    <div class="global-wrapper result question" style="text-align:center">
+                        <center>
+                            배달 앱에서 가게를 고르는 스타일은?
+                        </center>
                     </div>
                 </div>
             </div>
 
-            <footer class="ant-layout-footer">© 2021.<!-- -->
-                <a style="color:#000;font-weight:bold" href="https://github.com/MiraeChoi" target="_blank">MR CHOI</a> all rights reserved.<br/>
-                <a href="https://github.com/MiraeChoi" target="_blank">
-                    <span class="ant-avatar ant-avatar-circle ant-avatar-image"><img src="../img/mr.jpg" style="width:30px;height:30px;border-radius:15px;margin-top:5px;"/></span>
-                </a>
-            </footer>
-        </section>
-    </div>
+            <div class="ant-space-item" style="margin-bottom:16px">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn1" onclick="a1next();">
+                    <font color="#E12B7F">✓</font> 단골 가게, 단골 메뉴들이 정해져 있고 거의 그 안에서 주문한다.
+                </button>
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn2" onclick="a2next();">
+                    <font color="#E12B7F">✓</font> 그때그때 당기는 메뉴로 검색해서 주문한다.
+                </button>
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn3" onclick="a3next();">
+                    <font color="#E12B7F">✓</font> 쿠폰이 있거나 배달비 싸고 빨리 오는 곳 위주로 주문한다.
+                </button>
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn4" onclick="a4next();">
+                    <font color="#E12B7F">✓</font> 가게 목록을 탐방하며 느낌이 가는 곳을 고른다.
+                </button>
+            </div>
+        </main>
+
+        <div style="width:100%;display:flex;place-content:center">
+            <ins class="kakao_ad_area" style="display:none" data-ad-unit="DAN-92tJj5t6h8KDpfaP" data-ad-width="300" data-ad-height="250"></ins>
+        </div>
+        <br/>
+        <div>
+            <div class="">
+                <div style="width:100%;display:flex;place-content:center">
+                    <ins class="kakao_ad_area" style="display:none" data-ad-unit="DAN-6G5XCKZRhPvlwaTa" data-ad-width="320" data-ad-height="100"></ins>
+                </div>
+            </div>
+        </div>
+
+        <footer class="ant-layout-footer">© 2021.<!-- -->
+            <a style="color:#000;font-weight:bold" href="https://github.com/MiraeChoi" target="_blank">MR CHOI</a> all rights reserved.<br/>
+            <a href="https://github.com/MiraeChoi" target="_blank">
+                <span class="ant-avatar ant-avatar-circle ant-avatar-image"><img src="../img/mr.jpg" style="width:30px;height:30px;border-radius:15px;margin-top:5px;"/></span>
+            </a>
+        </footer>
+    </section>
+</div>
 </body>
 </html>

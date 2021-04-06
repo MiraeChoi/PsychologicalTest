@@ -37,6 +37,52 @@
 <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async=""></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
+<script>
+        window.onload = function() {
+            var q02 = sessionStorage.getItem('Q03_A');
+            if(q02 != null) {
+                var id = "btn" + sessionStorage.getItem('Q03_A');
+
+                document.getElementById(id).style.border="3px solid #E12B7F";
+                document.getElementById(id).style.color="#E12B7F";
+                document.getElementById(id).style.outline="0";
+            }
+        }
+
+        function a1next() {
+            if(sessionStorage.getItem('Q03_A') != null) {
+                sessionStorage.removeItem('Q03_A');
+            }
+            sessionStorage.setItem('Q03_A', 1);
+            location.href = '/result';
+        }
+
+        function a2next() {
+            if(sessionStorage.getItem('Q03_A') != null) {
+                sessionStorage.removeItem('Q03_A');
+            }
+            sessionStorage.setItem('Q03_A', 2);
+
+            location.href = '/result';
+        }
+        function a3next() {
+            if(sessionStorage.getItem('Q03_A') != null) {
+                sessionStorage.removeItem('Q03_A');
+            }
+            sessionStorage.setItem('Q03_A', 3);
+
+            location.href = '/result';
+        }
+        function a4next() {
+            if(sessionStorage.getItem('Q03_A') != null) {
+                sessionStorage.removeItem('Q03_A');
+            }
+            sessionStorage.setItem('Q03_A', 4);
+
+            location.href = '/result';
+        }
+    </script>
+
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
 <div id="__next">
     <section class="ant-layout">
@@ -64,16 +110,16 @@
             </div>
 
             <div class="ant-space-item" style="margin-bottom:16px">
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn1" onclick="a1next();">
                     <font color="#E12B7F">✓</font> 항상 밥약속 술약속이 잡혀 있다. 파티, 모임, 동호회 등등...
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn2" onclick="a2next();">
                     <font color="#E12B7F">✓</font> 집에서 혼자 먹고싶은 거 요리해 먹거나 배달시켜 먹는 게 힐링이지!
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn3" onclick="a3next();">
                     <font color="#E12B7F">✓</font> 내가 가고 싶은 모임이 있으면 참석하고 아니면 집에서 먹는다.
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn4" onclick="a4next();">
                     <font color="#E12B7F">✓</font> 좋아하는 사람들과 외식이나 홈 파티를 즐긴다.
                 </button>
             </div>

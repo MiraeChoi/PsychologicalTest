@@ -22,12 +22,12 @@ public class HomeController {
 
     @RequestMapping("/types/ESTP")
     public String typesESTP() {
-        return "estp";
+        return "type/estp";
     }
 
     @RequestMapping("/types/INTJ")
     public String typesINTJ() {
-        return "intj";
+        return "type/intj";
     }
 
     @RequestMapping(value = "/test1", produces = "application/json;charset=utf8")
@@ -46,6 +46,13 @@ public class HomeController {
     public String test3() {
         log.info("Q3");
         return "question/q03";
+    }
+
+    @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
+    public String result() {
+        log.info("Result");
+        //여기서 결과에 따라 return값이 달라짐
+        return "type/intj";
     }
 }
 

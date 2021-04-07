@@ -25,6 +25,14 @@
     <!--    <script src="${pageContext.request.contextPath}/jquery-3.6.0.min.js"></script>-->
     <script>
         window.onload = function() {
+            <!-- prev n next -->
+            if(q02 != null) {
+                document.getElementById(next_page).style.border="3px solid #E12B7F";
+                document.getElementById(next_page).style.color="#E12B7F";
+                document.getElementById(next_page).style.outline="0";
+            }
+
+            <!-- select button -->
             var q02 = sessionStorage.getItem('Q02_A');
             if(q02 != null) {
                 var id = "btn" + sessionStorage.getItem('Q02_A');
@@ -111,9 +119,9 @@
     <section class="ant-layout">
         <header class="ant-layout-header global-header">
             <div>
-                <div class="page_btn prev_page" onclick="location.href='/test1'"><</div>
+                <div class="page_btn prev_page" id="prev_page" onclick="location.href='/test1'"><</div>
                 <h1 style="display:inline; position:relative; top:13px;"><a>🐽 농담곰유형테스트</a></h1>
-                <div class="page_btn next_page" onclick="location.href='/test3'">></div>
+                <div class="page_btn next_page" id="next_page" onclick="location.href='/test3'">></div>
             </div>
         </header>
 

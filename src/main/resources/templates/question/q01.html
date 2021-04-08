@@ -43,10 +43,10 @@
 
 <script>
     window.onload = function() {
-        var q02 = sessionStorage.getItem('Q01_A');
-        if(q02 != null) {
+        var q01 = sessionStorage.getItem('Q01_A');
+        if(q01 != null) {
             <!-- next page -->
-            document.getElementById(next_page).onclick="location.href='/test2'"
+
 
             <!-- select button -->
             var id = "btn" + sessionStorage.getItem('Q01_A');
@@ -54,6 +54,17 @@
             document.getElementById(id).style.border="3px solid #E12B7F";
             document.getElementById(id).style.color="#E12B7F";
             document.getElementById(id).style.outline="0";
+        }
+
+        <!-- next page -->
+        var q02 = sessionStorage.getItem('Q02_A');
+
+        if(q02 != null) {
+            document.getElementById("next_page").onclick="location.href='/test2'";
+        } else {
+            document.getElementById("next_page").style.border="3px solid #D9D9D9";
+            document.getElementById("next_page").style.background-color="#F5F5F5";
+            document.getElementById("next_page").style.color="#B8B8B8";
         }
     }
 
@@ -96,9 +107,9 @@
         <section class="ant-layout">
             <header class="ant-layout-header global-header">
                 <div>
-                    <button class="page_btn prev_page" id="prev_page" disabled="disabled"><</button>
+                    <div class="page_btn prev_page" id="prev_page"><</div>
                     <h1 style="display:inline; position:relative; top:13px;"><a>🐽 농담곰유형테스트</a></h1>
-                    <button class="page_btn next_page" id="next_page">></button>
+                    <div class="page_btn next_page" id="next_page">></div>
                 </div>
             </header>
 

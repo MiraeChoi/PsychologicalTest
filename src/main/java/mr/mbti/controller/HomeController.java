@@ -4,9 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @Slf4j
 public class HomeController {
+
+    HttpSession session;
 
     @RequestMapping("/")
     public String home() {
@@ -51,8 +55,20 @@ public class HomeController {
     @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
     public String result() {
         log.info("Result");
+
         //여기서 결과에 따라 return값이 달라짐
-        return "type/intj";
+        if(session.getAttribute("Q3_A").toString() != null) {
+            log.info("값이 들어옴");
+
+            if(session.getAttribute("Q3_A").toString() == "1") {
+                return "type/intj";
+            } else if(session.getAttribute("Q3_A").toString() == "2") {
+                return "type/estp";
+            } else if(session.getAttribute("Q3_A").toString() == "3") {
+                return "우하하";
+            }
+        }
+        return "result";
     }
 }
 

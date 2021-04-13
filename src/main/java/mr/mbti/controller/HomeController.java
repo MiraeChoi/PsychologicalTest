@@ -67,8 +67,11 @@ public class HomeController {
             } else if(session.getAttribute("Q3_A").toString() == "3") {
                 return "우하하";
             }
+
+            return "result";
+        } else {
+            return "result";
         }
-        return "result";
     }
 }
 

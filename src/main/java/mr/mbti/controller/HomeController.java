@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -53,8 +54,11 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
-    public String result() {
-        log.info("Result");
+    public String result(HttpServletRequest request) {
+        session = request.getSession();
+
+        String result = session.getAttribute("Q3_A").toString();
+        log.info(result);
 
         //여기서 결과에 따라 return값이 달라짐
         if(session.getAttribute("Q3_A").toString() != null) {

@@ -65,10 +65,13 @@ public class HomeController {
             log.info("값이 들어옴");
 
             if(session.getAttribute("Q3_A").toString() == "1") {
+                log.info("1 : intj");
                 return "type/intj";
             } else if(session.getAttribute("Q3_A").toString() == "2") {
+                log.info("2 : estp");
                 return "type/estp";
             } else if(session.getAttribute("Q3_A").toString() == "3") {
+                log.info("3 : result");
                 return "우하하";
             }
 

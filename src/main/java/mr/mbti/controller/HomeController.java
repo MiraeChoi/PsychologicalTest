@@ -72,7 +72,10 @@ public class HomeController {
                 return "type/estp";
             } else if(session.getAttribute("Q3_A").toString() == "3") {
                 log.info("3 : result");
-                return "우하하";
+                return "우하하3";
+            } else if(session.getAttribute("Q3_A").toString() == "4") {
+                log.info("4 : result");
+                return "우하하4";
             }
 
             return "result";

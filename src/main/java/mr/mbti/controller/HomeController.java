@@ -4,8 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 @Controller
 @Slf4j
@@ -54,7 +57,7 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
-    public String result(HttpServletRequest request) {
+    public String result(HttpSession session, HttpServletRequest request, HttpServletResponse reponse) throws ServletException, IOException {
         session = request.getSession();
 
         String result = session.getAttribute("Q3_A").toString();

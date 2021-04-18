@@ -59,24 +59,26 @@ public class HomeController {
     @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
     public String result(HttpSession session, HttpServletRequest request, HttpServletResponse reponse) throws ServletException, IOException {
         session = request.getSession();
+        log.info("들어왔단다");
 
-        String result = session.getAttribute("Q3_A").toString();
-        log.info(result);
+        String result = session.getAttribute("Q03_A").toString();
+        System.out.println("result = " + result);
+        log.info("값 : " + result);
 
         //여기서 결과에 따라 return값이 달라짐
-        if(session.getAttribute("Q3_A").toString() != null) {
+        if(session.getAttribute("Q03_A").toString() != null) {
             log.info("값이 들어옴");
 
-            if(session.getAttribute("Q3_A").toString() == "1") {
+            if(session.getAttribute("Q03_A").toString() == "1") {
                 log.info("1 : intj");
                 return "type/intj";
-            } else if(session.getAttribute("Q3_A").toString() == "2") {
+            } else if(session.getAttribute("Q03_A").toString() == "2") {
                 log.info("2 : estp");
                 return "type/estp";
-            } else if(session.getAttribute("Q3_A").toString() == "3") {
+            } else if(session.getAttribute("Q03_A").toString() == "3") {
                 log.info("3 : result");
                 return "우하하3";
-            } else if(session.getAttribute("Q3_A").toString() == "4") {
+            } else if(session.getAttribute("Q03_A").toString() == "4") {
                 log.info("4 : result");
                 return "우하하4";
             }

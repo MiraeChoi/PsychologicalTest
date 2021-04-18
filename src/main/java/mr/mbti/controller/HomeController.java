@@ -61,7 +61,7 @@ public class HomeController {
         session = request.getSession();
         log.info("들어왔단다");
 
-        String result = session.getAttribute("Q03_A").toString();
+        String result = (String)session.getAttribute("Q03_A");
         System.out.println("result = " + result);
         log.info("값 : " + result);
 

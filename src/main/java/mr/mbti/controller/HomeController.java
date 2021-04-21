@@ -2,6 +2,8 @@ package mr.mbti.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.ServletException;
@@ -56,8 +58,10 @@ public class HomeController {
         return "question/q03";
     }
 
-    @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
-    public String result(HttpSession session, HttpServletRequest request, HttpServletResponse reponse) throws ServletException, IOException {
+    @PostMapping("/items/{itemId}/delete")
+    public String result(@PathVariable("Q03_A") Long itemId, HttpSession session, HttpServletRequest request, HttpServletResponse reponse){
+//    @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
+//    public String result(HttpSession session, HttpServletRequest request, HttpServletResponse reponse) throws ServletException, IOException {
         session = request.getSession();
         log.info("들어왔단다");
 

@@ -54,7 +54,7 @@
                 sessionStorage.removeItem('Q03_A');
             }
             sessionStorage.setItem('Q03_A', 1);
-            location.href = '/result';
+            location.href = '/result/a1';
         }
 
         function a2next() {
@@ -63,7 +63,7 @@
             }
             sessionStorage.setItem('Q03_A', 2);
 
-            location.href = '/result';
+            location.href = '/result/a2';
         }
         function a3next() {
             if(sessionStorage.getItem('Q03_A') != null) {
@@ -72,7 +72,7 @@
             sessionStorage.setItem('Q03_A', 3);
             <!-- 값 보내기 -->
 
-            location.href = '/result';
+            location.href = '/result/a3';
         }
         function a4next() {
             if(sessionStorage.getItem('Q03_A') != null) {
@@ -80,7 +80,7 @@
             }
             sessionStorage.setItem('Q03_A', 4);
 
-            location.href = '/result';
+            location.href = '/result/a4';
         }
     </script>
 

@@ -58,8 +58,8 @@ public class HomeController {
         return "question/q03";
     }
 
-    @PostMapping("/items/{itemId}/delete")
-    public String result(@PathVariable("Q03_A") Long itemId, HttpSession session, HttpServletRequest request, HttpServletResponse reponse){
+    @PostMapping("/result/{result}")
+    public String result(@PathVariable("Q03_A") String result, HttpSession session, HttpServletRequest request, HttpServletResponse reponse){
 //    @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
 //    public String result(HttpSession session, HttpServletRequest request, HttpServletResponse reponse) throws ServletException, IOException {
         session = request.getSession();
@@ -67,23 +67,23 @@ public class HomeController {
 
         String result02 = (String)session.getAttribute("Q02_A");
         String result03 = (String)session.getAttribute("Q03_A");
-        System.out.println("result = " + result03);
-        log.info("값 : " + result03);
+        System.out.println("result = " + result);
+        log.info("값 : " + result);
 
         //여기서 결과에 따라 return값이 달라짐
         if(result03 != null) {
             log.info("값이 들어옴");
 
-            if(result03 == "1") {
+            if(result == "1") {
                 log.info("1 : intj");
                 return "type/intj";
-            } else if(result03 == "2") {
+            } else if(result == "2") {
                 log.info("2 : estp");
                 return "type/estp";
-            } else if(result03 == "3") {
+            } else if(result == "3") {
                 log.info("3 : result");
                 return "우하하3";
-            } else if(result03 == "4") {
+            } else if(result == "4") {
                 log.info("4 : result");
                 return "우하하4";
             }

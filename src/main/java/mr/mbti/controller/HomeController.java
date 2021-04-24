@@ -66,9 +66,10 @@ public class HomeController {
         log.info("들어왔단다");
 
         String result02 = (String)session.getAttribute("Q02_A");
+        Object result1 = session.getAttribute("Q02_A");
         String result03 = (String)session.getAttribute("Q03_A");
-        System.out.println("result = " + result);
-        log.info("값 : " + result);
+        System.out.println("result = " + result1);
+        log.info("값 : " + result1);
 
         //여기서 결과에 따라 return값이 달라짐
         if(result03 != null) {

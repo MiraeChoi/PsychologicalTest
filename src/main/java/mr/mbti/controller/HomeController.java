@@ -58,10 +58,10 @@ public class HomeController {
         return "question/q03";
     }
 
-    @PostMapping("/result/{result}")
-    public String result(@PathVariable("Q03_A") String result, HttpSession session, HttpServletRequest request, HttpServletResponse reponse){
-//    @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
-//    public String result(HttpSession session, HttpServletRequest request, HttpServletResponse reponse) throws ServletException, IOException {
+//    @PostMapping("/result/{result}")
+//    public String result(@PathVariable("Q03_A") String result, HttpSession session, HttpServletRequest request, HttpServletResponse reponse){
+    @RequestMapping(value = "/result/{result}", produces = "application/json;charset=utf8")
+    public String result(@PathVariable("Q03_A") String result, HttpSession session, HttpServletRequest request, HttpServletResponse reponse) throws ServletException, IOException {
         session = request.getSession();
         log.info("들어왔단다");
 

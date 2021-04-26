@@ -63,6 +63,10 @@
             }
             sessionStorage.setItem('Q03_A', 2);
 
+            var q02a = sessionStorage.getItem('Q02_A');
+            var q03a = sessionStorage.getItem('Q03_A');
+            alert("결과 : " + q02a + "\n결과 : " + q03a);
+
             location.href = '/result/a2';
         }
         function a3next() {

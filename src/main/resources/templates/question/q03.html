@@ -63,21 +63,27 @@
             }
             sessionStorage.setItem('Q03_A', 2);
 
+            var q01a = sessionStorage.getItem('Q01_A');
             var q02a = sessionStorage.getItem('Q02_A');
             var q03a = sessionStorage.getItem('Q03_A');
-            alert("결과 : " + q02a + "\n결과 : " + q03a);
 
-            location.href = '/result/a2';
+            if(q01a == 1 && q02a == 2 && q03a == 3) {
+                location.href = '/result/estp';
+            } else {
+                location.href = '/result/intj';
+            }
+            alert("결과 : " + q02a + "\n결과 : " + q03a);
         }
+
         function a3next() {
             if(sessionStorage.getItem('Q03_A') != null) {
                 sessionStorage.removeItem('Q03_A');
             }
             sessionStorage.setItem('Q03_A', 3);
-            <!-- 값 보내기 -->
 
             location.href = '/result/a3';
         }
+
         function a4next() {
             if(sessionStorage.getItem('Q03_A') != null) {
                 sessionStorage.removeItem('Q03_A');

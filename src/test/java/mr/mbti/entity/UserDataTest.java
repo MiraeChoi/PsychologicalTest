@@ -38,5 +38,10 @@ class UserDataTest {
         }
     }
 
+    @Test
+    public void resultData() {
+
+    }
+
 }
 

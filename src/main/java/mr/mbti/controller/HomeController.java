@@ -58,6 +58,12 @@ public class HomeController {
         return "question/q03";
     }
 
+    @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
+    public String result() {
+        log.info("result");
+        return "question/q03";
+    }
+
 //    @PostMapping("/result/{result}")
 //    public String result(@PathVariable("Q03_A") String result, HttpSession session, HttpServletRequest request, HttpServletResponse reponse){
     @RequestMapping(value = "/result/{result}", produces = "application/json;charset=utf8")

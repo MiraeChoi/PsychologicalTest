@@ -2,6 +2,7 @@ package mr.mbti.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import mr.mbti.entity.UserData;
 import mr.mbti.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -64,11 +65,14 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
-    public String result() {
+    public String result(UserData userData) {
         log.info("result");
-        return "question/q03";
+//        return "question/q03";
+//        return userRepository.findByUsername(userData.getUsername());
+        return "";
     }
 
+    /*
 //    @PostMapping("/result/{result}")
 //    public String result(@PathVariable("Q03_A") String result, HttpSession session, HttpServletRequest request, HttpServletResponse reponse){
     @RequestMapping(value = "/result/{result}", produces = "application/json;charset=utf8")
@@ -105,5 +109,6 @@ public class HomeController {
             return "result";
         }
     }
+     */
 }
 

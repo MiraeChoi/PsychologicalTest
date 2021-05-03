@@ -21,11 +21,11 @@ class UserDataTest {
     EntityManager em;
 
     @Test
-    public void testUserData() {
-        UserData userData1 = new UserData("농담곰", 1, 2, 3);
-        UserData userData2 = new UserData("말레이곰", 2, 4, 1);
+    public void testUserData(String username, int q01_a, int q02_a, int q03_a) {
+        UserData userData1 = new UserData(username, q01_a, q02_a, q03_a);
+//        UserData userData2 = new UserData("말레이곰", 2, 4, 1);
         em.persist(userData1);
-        em.persist(userData2);
+//        em.persist(userData2);
 
         em.flush();
         em.clear();

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.Random;
 
 @RestController
 @Slf4j
@@ -60,8 +61,11 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
-    public String result(UserData userData) {
+    public String result(int q1, int q2, int q3) {
         log.info("result");
+        String username = "U000" + String.format("%10d", new Random().nextInt(Integer.MAX_VALUE - 0 + 1));
+
+        UserData userData = new UserData(username, q1, q2, q3);
         userJpaRepository.save(userData);
 
         return "result";

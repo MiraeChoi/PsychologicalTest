@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mr.mbti.entity.UserData;
 import mr.mbti.repository.UserJpaRepository;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -60,7 +61,7 @@ public class HomeController {
         return "question/q03";
     }
 
-    @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
+    @PostMapping(value = "/result", produces = "application/json;charset=utf8")
     public String result(int q1, int q2, int q3) {
         log.info("result");
         String username = "U000" + String.format("%10d", new Random().nextInt(Integer.MAX_VALUE - 0 + 1));

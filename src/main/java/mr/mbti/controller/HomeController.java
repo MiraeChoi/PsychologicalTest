@@ -69,6 +69,8 @@ public class HomeController {
         UserData userData = new UserData(username, q1, q2, q3);
         userJpaRepository.save(userData);
 
+        log.info(userData.getUsername());
+
         return "result";
     }
 

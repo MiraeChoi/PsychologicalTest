@@ -47,19 +47,24 @@
         }
     }
 
-    function a1next() {
+    function next(var answer) {
         if(sessionStorage.getItem('Q03_A') != null) {
             sessionStorage.removeItem('Q03_A');
         }
-        sessionStorage.setItem('Q03_A', 1);
-        location.href = '/result/a1';
-    }
 
-    function a2next() {
-        if(sessionStorage.getItem('Q03_A') != null) {
-            sessionStorage.removeItem('Q03_A');
+        if(answer == 1) {
+            sessionStorage.setItem('Q03_A', 1);
+            location.href = '/result/a1';
+        } else if(answer == 2) {
+            sessionStorage.setItem('Q03_A', 2);
+            location.href = '/result/a2';
+        } else if(answer == 3) {
+            sessionStorage.setItem('Q03_A', 3);
+            location.href = '/result/a3';
+        } else if(answer == 4) {
+            sessionStorage.setItem('Q03_A', 4);
+            location.href = '/result/a4';
         }
-        sessionStorage.setItem('Q03_A', 2);
 
         var q01a = sessionStorage.getItem('Q01_A');
         var q02a = sessionStorage.getItem('Q02_A');
@@ -72,33 +77,7 @@
             location.href = '/result/intj';
         }
         alert("결과 : " + q02a + "\n결과 : " + q03a);
-    }
 
-    function a3next() {
-        if(sessionStorage.getItem('Q03_A') != null) {
-            sessionStorage.removeItem('Q03_A');
-        }
-        sessionStorage.setItem('Q03_A', 3);
-
-        var q01a = sessionStorage.getItem('Q01_A');
-        var q02a = sessionStorage.getItem('Q02_A');
-        var q03a = sessionStorage.getItem('Q03_A');
-
-        if(q02a == 2 && q03a == 3) {
-            alert("잘 했어용! ^^");
-            location.href = '/result/estp';
-        } else {
-            location.href = '/result/intj';
-        }
-    }
-
-    function a4next() {
-        if(sessionStorage.getItem('Q03_A') != null) {
-            sessionStorage.removeItem('Q03_A');
-        }
-        sessionStorage.setItem('Q03_A', 4);
-
-        location.href = '/result/a4';
     }
 </script>
 
@@ -129,16 +108,16 @@
             </div>
 
             <div class="ant-space-item" style="margin-bottom:16px">
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn1" onclick="a1next();">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn1" onclick="next(1);">
                     <font color="#E12B7F">✓</font> 항상 밥약속 술약속이 잡혀 있다. 파티, 모임, 동호회 등등...
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn2" onclick="a2next();">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn2" onclick="next(2);">
                     <font color="#E12B7F">✓</font> 집에서 혼자 먹고싶은 거 요리해 먹거나 배달시켜 먹는 게 힐링이지!
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn3" onclick="a3next();">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn3" onclick="next(3);">
                     <font color="#E12B7F">✓</font> 내가 가고 싶은 모임이 있으면 참석하고 아니면 집에서 먹는다.
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn4" onclick="a4next();">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn4" onclick="next(4);">
                     <font color="#E12B7F">✓</font> 좋아하는 사람들과 외식이나 홈 파티를 즐긴다.
                 </button>
             </div>

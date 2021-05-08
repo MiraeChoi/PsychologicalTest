@@ -63,13 +63,16 @@ public class HomeController {
 
     @PostMapping(value = "/result", produces = "application/json;charset=utf8")
     public String result(int q1, int q2, int q3) {
-        log.info("result");
+        log.info("result :" + q1 + "/" + q2 + "/" + q3);
         String username = "U000" + String.format("%10d", new Random().nextInt(Integer.MAX_VALUE - 0 + 1));
 
         UserData userData = new UserData(username, q1, q2, q3);
         userJpaRepository.save(userData);
 
         log.info(userData.getUsername());
+
+        if(q3 == 1 || q3 == 2) return "type/estp";
+        else if(q3 == 3 || q3 == 4) return "type/intj";
 
         return "result";
     }

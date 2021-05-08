@@ -70,12 +70,7 @@
         var q02a = sessionStorage.getItem('Q02_A');
         var q03a = sessionStorage.getItem('Q03_A');
 
-        if(q02a == 2 && q03a == 2) {
-            alert("잘 했어용!");
-            location.href = '/result?q1=' + q01a + '&q2=' + q02a + '&q3=' + q03a;
-        } else {
-            location.href = '/result/intj';
-        }
+        location.href = '/result?q1=' + q01a + '&q2=' + q02a + '&q3=' + q03a;
         alert("결과 : " + q02a + "\n결과 : " + q03a);
 
     }

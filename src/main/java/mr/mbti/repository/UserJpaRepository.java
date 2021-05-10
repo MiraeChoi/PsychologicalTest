@@ -3,11 +3,13 @@ package mr.mbti.repository;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.extern.slf4j.Slf4j;
 import mr.mbti.entity.UserData;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
 @Slf4j
+@Repository
 public class UserJpaRepository {
     private final EntityManager em;
     private final JPAQueryFactory queryFactory;

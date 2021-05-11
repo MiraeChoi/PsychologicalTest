@@ -6,7 +6,6 @@ import mr.mbti.entity.UserData;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import java.util.List;
 
 @Slf4j
 @Repository

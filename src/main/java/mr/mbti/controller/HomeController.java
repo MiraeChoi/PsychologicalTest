@@ -17,14 +17,14 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class HomeController {
 
-    HttpSession session;
+//    HttpSession session;
     private final UserJpaRepository userJpaRepository;
     QueryFactory queryFactory;
 
     @RequestMapping("/")
     public String home() {
         log.info("Home Controller!!! 와아앙ㅇ");
-        return "home.html";
+        return "home";
     }
 
     @RequestMapping("/types")

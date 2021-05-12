@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mr.mbti.entity.UserData;
 import mr.mbti.repository.UserJpaRepository;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpSession;
 import java.util.Random;
 
-@RestController
+@Controller
 @Slf4j
 @RequiredArgsConstructor
 public class HomeController {
@@ -62,7 +64,7 @@ public class HomeController {
     }
 
     @PostMapping(value = "/result", produces = "application/json;charset=utf8")
-    public String result(int q1, int q2, int q3) {
+    public String result(@PathVariable("Q01_A") int q1, @PathVariable("Q02_A") int q2, @PathVariable("Q03_A") int q3) {
         log.info("result :" + q1 + "/" + q2 + "/" + q3);
         String username = "U000" + String.format("%10d", new Random().nextInt(Integer.MAX_VALUE - 0 + 1));
 

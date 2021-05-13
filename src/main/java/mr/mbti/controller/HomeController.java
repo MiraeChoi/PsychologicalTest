@@ -19,7 +19,7 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class HomeController {
 
-//    HttpSession session;
+    HttpSession session;
     private final UserJpaRepository userJpaRepository;
     QueryFactory queryFactory;
 
@@ -63,8 +63,12 @@ public class HomeController {
         return "question/q03";
     }
 
-    @PostMapping(value = "/result", produces = "application/json;charset=utf8")
-    public String result(@PathVariable("Q01_A") int q1, @PathVariable("Q02_A") int q2, @PathVariable("Q03_A") int q3) {
+    @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
+    public String result(@PathVariable("q1") int q1, @PathVariable("q2") int q2, @PathVariable("q3") int q3) {
+        q1 = 0;
+        q2 = 0;
+        q3 = 0;
+
         log.info("result :" + q1 + "/" + q2 + "/" + q3);
         String username = "U000" + String.format("%10d", new Random().nextInt(Integer.MAX_VALUE - 0 + 1));
 

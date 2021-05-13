@@ -47,23 +47,23 @@
         }
     }
 
-    function next(var answer) {
-        alert("확인 : " + answer);
+    function nextp(val) {
+        alert("확인 : " + val);
 
         if(sessionStorage.getItem('Q03_A') != null) {
             sessionStorage.removeItem('Q03_A');
         }
 
-        if(answer == 1) {
+        if(val == 1) {
             sessionStorage.setItem('Q03_A', 1);
             location.href = '/result/a1';
-        } else if(answer == 2) {
+        } else if(val == 2) {
             sessionStorage.setItem('Q03_A', 2);
             location.href = '/result/a2';
-        } else if(answer == 3) {
+        } else if(val == 3) {
             sessionStorage.setItem('Q03_A', 3);
             location.href = '/result/a3';
-        } else if(answer == 4) {
+        } else if(val == 4) {
             sessionStorage.setItem('Q03_A', 4);
             location.href = '/result/a4';
         }
@@ -74,7 +74,6 @@
 
         location.href = '/result?q1=' + q01a + '&q2=' + q02a + '&q3=' + q03a;
         alert("결과 : " + q02a + "\n결과 : " + q03a);
-
     }
 </script>
 
@@ -105,16 +104,16 @@
             </div>
 
             <div class="ant-space-item" style="margin-bottom:16px">
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn1" onclick="next('1');">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" value="1" id="btn1" onclick="nextp(this.value);">
                     <font color="#E12B7F">✓</font> 항상 밥약속 술약속이 잡혀 있다. 파티, 모임, 동호회 등등...
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn2" onclick="next('2');">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" value="2" id="btn2" onclick="nextp(this.value);">
                     <font color="#E12B7F">✓</font> 집에서 혼자 먹고싶은 거 요리해 먹거나 배달시켜 먹는 게 힐링이지!
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn3" onclick="next('3');">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn3" value="3" onclick="nextp(this.value);">
                     <font color="#E12B7F">✓</font> 내가 가고 싶은 모임이 있으면 참석하고 아니면 집에서 먹는다.
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn4" onclick="next('4');">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn4" value="4" onclick="nextp(this.value);">
                     <font color="#E12B7F">✓</font> 좋아하는 사람들과 외식이나 홈 파티를 즐긴다.
                 </button>
             </div>

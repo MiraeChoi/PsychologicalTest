@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Random;
 
@@ -64,10 +65,10 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
-    public String result(@PathVariable("q1") int q1, @PathVariable("q2") int q2, @PathVariable("q3") int q3) {
-        q1 = 0;
-        q2 = 0;
-        q3 = 0;
+    public String result(HttpServletRequest request) {
+        int q1 = Integer.parseInt(request.getParameter("q1"));
+        int q2 = Integer.parseInt(request.getParameter("q2"));
+        int q3 = Integer.parseInt(request.getParameter("q3"));
 
         log.info("result :" + q1 + "/" + q2 + "/" + q3);
         String username = "U000" + String.format("%10d", new Random().nextInt(Integer.MAX_VALUE - 0 + 1));

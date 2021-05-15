@@ -18,6 +18,9 @@ a {
 a:focus {
     outline: 0;
 }
+ul {
+    list-style-type: none;
+}
 p {
     font-size: 10pt;
     font-color: #E12B7F;

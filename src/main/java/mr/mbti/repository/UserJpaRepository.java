@@ -4,11 +4,13 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.extern.slf4j.Slf4j;
 import mr.mbti.entity.UserData;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
 @Slf4j
 @Repository
+@Transactional
 public class UserJpaRepository {
     private final EntityManager em;
     private final JPAQueryFactory queryFactory;

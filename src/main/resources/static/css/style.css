@@ -11,6 +11,15 @@ h2 {
     font-weight: normal;
     font-size: 15pt;
 }
+h3 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 12pt;
+}
+h4 {
+    text-align: center;
+    font-size: 10pt;
+}
 a {
     text-decoration: none;
     border: 0;
@@ -20,6 +29,8 @@ a:focus {
 }
 ul {
     list-style-type: none;
+    font-size: 10pt;
+    margin-left: 0;
 }
 p {
     font-size: 10pt;

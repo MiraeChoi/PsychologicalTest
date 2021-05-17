@@ -72,6 +72,9 @@ public class HomeController {
 
         log.info("result :" + q1 + "/" + q2 + "/" + q3);
 //        String username = "U000" + String.format("%10d", new Random().nextInt(Integer.MAX_VALUE - 0 + 1));
+        String ip =request.getRemoteAddr();
+        log.info("클라이언트 IP 주소: " + ip);
+
         String username = "USER" + String.format("%05d", new Random().nextInt(99999 - 0 + 1));
 
         UserData userData = new UserData(username, q1, q2, q3);

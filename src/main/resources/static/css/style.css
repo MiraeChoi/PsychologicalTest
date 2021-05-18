@@ -30,7 +30,7 @@ a:focus {
 ul {
     list-style-type: none;
     font-size: 10pt;
-    margin-left: 0;
+    padding-left: 0;
 }
 p {
     font-size: 10pt;

@@ -41,7 +41,7 @@ public class HomeController {
         return "type/estp";
     }
 
-    @RequestMapping("/types/INTJ")
+    @RequestMapping(value = "/types/INTJ", produces = "application/json;charset=utf8")
     public String typesINTJ() {
         return "type/intj";
     }
@@ -71,11 +71,13 @@ public class HomeController {
         int q3 = Integer.parseInt(request.getParameter("q3"));
 
         log.info("result :" + q1 + "/" + q2 + "/" + q3);
-//        String username = "U000" + String.format("%10d", new Random().nextInt(Integer.MAX_VALUE - 0 + 1));
-        String ip =request.getRemoteAddr();
-        log.info("클라이언트 IP 주소: " + ip);
+        String ip = request.getRemoteAddr();
+        ip = ip.replaceAll(":", "");
+        int realIp = Integer.parseInt(ip);
+        log.info("클라이언트 IP 주소: " + realIp);
 
-        String username = "USER" + String.format("%05d", new Random().nextInt(99999 - 0 + 1));
+//        String username = "USER" + String.format("%05d", new Random().nextInt(99999 - 0 + 1));
+        String username = "USER" + String.format("%012d", realIp);
 
         UserData userData = new UserData(username, q1, q2, q3);
         userJpaRepository.save(userData);

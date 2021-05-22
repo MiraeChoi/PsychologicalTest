@@ -49,6 +49,12 @@
         }
     }
 
+    function page(var page) {
+        if(page == 'prev') {
+            alert("이전");
+        }
+    }
+
     function a1next() {
         if(sessionStorage.getItem('Q01_A') != null) {
             sessionStorage.removeItem('Q01_A');
@@ -91,9 +97,9 @@
         <section class="ant-layout">
             <header class="ant-layout-header global-header">
                 <div>
-                    <div class="page_btn prev_page" id="prev_page"><</div>
+                    <div class="page_btn prev_page" id="prev_page" onclick="page('prev');"><</div>
                     <h1 style="display:inline; position:relative; top:13px;"><a>🐽 농담곰유형테스트</a></h1>
-                    <div class="page_btn next_page" id="next_page">></div>
+                    <div class="page_btn next_page" id="next_page" onclick="page('next');">></div>
                 </div>
             </header>
 

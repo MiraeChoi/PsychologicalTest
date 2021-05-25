@@ -47,6 +47,18 @@
         }
     }
 
+    function page(page) {
+        if(page == 'prev') {
+            if(sessionStorage.getItem('Q02_A') != null) {
+                location.href = '/test2';
+            }
+        } else if(page == 'next') {
+            if(sessionStorage.getItem('Q03_A') != null) {
+                location.href = '/';
+            }
+        }
+    }
+
     function nextp(val) {
         alert("확인 : " + val);
 
@@ -82,9 +94,9 @@
     <section class="ant-layout">
         <header class="ant-layout-header global-header">
             <div>
-                <div class="page_btn prev_page"><</div>
+                <button class="page_btn prev_page" id="prev_page" onclick="page('prev');"><</button>
                 <h1 style="display:inline; position:relative; top:13px;"><a>🐽 농담곰유형테스트</a></h1>
-                <div class="page_btn next_page">></div>
+                <button class="page_btn next_page" id="next_page" onclick="page('next');">></button>
             </div>
         </header>
 

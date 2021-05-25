@@ -53,15 +53,11 @@
                 location.href = '/test2';
             }
         } else if(page == 'next') {
-            if(sessionStorage.getItem('Q03_A') != null) {
-                location.href = '/';
-            }
+
         }
     }
 
     function nextp(val) {
-        alert("확인 : " + val);
-
         if(sessionStorage.getItem('Q03_A') != null) {
             sessionStorage.removeItem('Q03_A');
         }
@@ -116,16 +112,16 @@
             </div>
 
             <div class="ant-space-item" style="margin-bottom:16px">
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" value="1" id="btn1" onclick="nextp(this.value);">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(1);">
                     <font color="#E12B7F">✓</font> 항상 밥약속 술약속이 잡혀 있다. 파티, 모임, 동호회 등등...
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" value="2" id="btn2" onclick="nextp(this.value);">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(2);">
                     <font color="#E12B7F">✓</font> 집에서 혼자 먹고싶은 거 요리해 먹거나 배달시켜 먹는 게 힐링이지!
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn3" value="3" onclick="nextp(this.value);">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(3);">
                     <font color="#E12B7F">✓</font> 내가 가고 싶은 모임이 있으면 참석하고 아니면 집에서 먹는다.
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn4" value="4" onclick="nextp(this.value);">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(4);">
                     <font color="#E12B7F">✓</font> 좋아하는 사람들과 외식이나 홈 파티를 즐긴다.
                 </button>
             </div>

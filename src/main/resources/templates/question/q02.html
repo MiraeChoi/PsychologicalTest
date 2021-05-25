@@ -47,36 +47,20 @@
             }
         }
 
-        function a1next() {
+        function nextp(val) {
             if(sessionStorage.getItem('Q02_A') != null) {
                 sessionStorage.removeItem('Q02_A');
             }
-            sessionStorage.setItem('Q02_A', 1);
-            location.href = '/test3';
-        }
 
-        function a2next() {
-            if(sessionStorage.getItem('Q02_A') != null) {
-                sessionStorage.removeItem('Q02_A');
+            if(val == 1) {
+                sessionStorage.setItem('Q02_A', 1);
+            } else if(val == 2) {
+                sessionStorage.setItem('Q02_A', 2);
+            } else if(val == 3) {
+                sessionStorage.setItem('Q02_A', 3);
+            } else if(val == 4) {
+                sessionStorage.setItem('Q02_A', 4);
             }
-            sessionStorage.setItem('Q02_A', 2);
-
-            location.href = '/test3';
-        }
-        function a3next() {
-            if(sessionStorage.getItem('Q02_A') != null) {
-                sessionStorage.removeItem('Q02_A');
-            }
-            sessionStorage.setItem('Q02_A', 3);
-
-            location.href = '/test3';
-        }
-        function a4next() {
-            if(sessionStorage.getItem('Q02_A') != null) {
-                sessionStorage.removeItem('Q02_A');
-            }
-            sessionStorage.setItem('Q02_A', 4);
-
             location.href = '/test3';
         }
     </script>
@@ -145,16 +129,16 @@
             </div>
 
             <div class="ant-space-item" style="margin-bottom:16px">
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn1" onclick="a1next();">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(1);">
                     <font color="#E12B7F">✓</font> 단골 가게, 단골 메뉴들이 정해져 있고 거의 그 안에서 주문한다.
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn2" onclick="a2next();">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(2);">
                     <font color="#E12B7F">✓</font> 그때그때 당기는 메뉴로 검색해서 주문한다.
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn3" onclick="a3next();">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(3);">
                     <font color="#E12B7F">✓</font> 쿠폰이 있거나 배달비 싸고 빨리 오는 곳 위주로 주문한다.
                 </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" id="btn4" onclick="a4next();">
+                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(4);">
                     <font color="#E12B7F">✓</font> 가게 목록을 탐방하며 느낌이 가는 곳을 고른다.
                 </button>
             </div>

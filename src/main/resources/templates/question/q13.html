@@ -37,9 +37,9 @@
 
 <script>
     window.onload = function() {
-        var q03 = sessionStorage.getItem('Q03_A');
-        if(q03 != null) {
-            var id = "btn" + sessionStorage.getItem('Q03_A');
+        var q13 = sessionStorage.getItem('Q13_A');
+        if(q13 != null) {
+            var id = "btn" + sessionStorage.getItem('Q13_A');
 
             document.getElementById(id).style.border="3px solid #E12B7F";
             document.getElementById(id).style.color="#E12B7F";
@@ -49,7 +49,7 @@
 
     function page(page) {
         if(page == 'prev') {
-            if(sessionStorage.getItem('Q02_A') != null) {
+            if(sessionStorage.getItem('Q12_A') != null) {
                 location.href = '/test2';
             }
         } else if(page == 'next') {
@@ -58,22 +58,16 @@
     }
 
     function nextp(val) {
-        if(sessionStorage.getItem('Q03_A') != null) {
-            sessionStorage.removeItem('Q03_A');
+        if(sessionStorage.getItem('Q13_A') != null) {
+            sessionStorage.removeItem('Q13_A');
         }
 
         if(val == 1) {
-            sessionStorage.setItem('Q03_A', 1);
+            sessionStorage.setItem('Q13_A', 1);
             location.href = '/result/a1';
         } else if(val == 2) {
-            sessionStorage.setItem('Q03_A', 2);
+            sessionStorage.setItem('Q13_A', 2);
             location.href = '/result/a2';
-        } else if(val == 3) {
-            sessionStorage.setItem('Q03_A', 3);
-            location.href = '/result/a3';
-        } else if(val == 4) {
-            sessionStorage.setItem('Q03_A', 4);
-            location.href = '/result/a4';
         }
 
         var q01a = sessionStorage.getItem('Q01_A');
@@ -81,7 +75,7 @@
         var q03a = sessionStorage.getItem('Q03_A');
 
         location.href = '/result?q1=' + q01a + '&q2=' + q02a + '&q3=' + q03a;
-        alert("결과 : " + q02a + "\n결과 : " + q03a);
+<!--        alert("결과 : " + q02a + "\n결과 : " + q03a);-->
     }
 </script>
 
@@ -100,12 +94,12 @@
             <div class="bar-light-gray">
                 <div class="bar-hot-pink"></div>
             </div>
-        <!--                <svg width="480" height="50"></svg>-->
+            <!--                <svg width="480" height="50"></svg>-->
             <div>
                 <div class="ant-space-item" style="margin-bottom:16px">
                     <div class="global-wrapper result question" style="text-align:center">
                         <center>
-                            나의 주말 먹방형태는 주로
+                            새로 오픈한 돈가스집! 다 먹고 나가려는데 사장님이 식사가 어땠는지 얘기해달라고 하신다.
                         </center>
                     </div>
                 </div>
@@ -113,16 +107,10 @@
 
             <div class="ant-space-item" style="margin-bottom:16px">
                 <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(1);">
-                    <font color="#E12B7F">✓</font> 항상 밥약속 술약속이 잡혀 있다. 파티, 모임, 동호회 등등...
+                    <font color="#E12B7F">✓</font> 인테리어도 너무 예쁘고 맛있었어요! 주변에 많이 알릴게요! 사장님께 파이팅을 실어준다.
                 </button>
                 <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(2);">
-                    <font color="#E12B7F">✓</font> 집에서 혼자 먹고싶은 거 요리해 먹거나 배달시켜 먹는 게 힐링이지!
-                </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(3);">
-                    <font color="#E12B7F">✓</font> 내가 가고 싶은 모임이 있으면 참석하고 아니면 집에서 먹는다.
-                </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(4);">
-                    <font color="#E12B7F">✓</font> 좋아하는 사람들과 외식이나 홈 파티를 즐긴다.
+                    <font color="#E12B7F">✓</font> 튀김이 다른 곳보다 더 바삭하고 고기도 두툼해서 맛있었어요! 음식에 대한 상세한 피드백을 한다.
                 </button>
             </div>
         </main>

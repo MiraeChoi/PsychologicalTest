@@ -51,17 +51,65 @@ public class HomeController {
         log.info("Q1");
         return "question/q01";
     }
-
     @RequestMapping(value = "/test2", produces = "application/json;charset=utf8")
     public String test2() {
         log.info("Q2");
         return "question/q02";
     }
-
     @RequestMapping(value = "/test3", produces = "application/json;charset=utf8")
     public String test3() {
         log.info("Q3");
         return "question/q03";
+    }
+    @RequestMapping(value = "/test4", produces = "application/json;charset=utf8")
+    public String test4() {
+        log.info("Q4");
+        return "question/q04";
+    }
+    @RequestMapping(value = "/test5", produces = "application/json;charset=utf8")
+    public String test5() {
+        log.info("Q5");
+        return "question/q05";
+    }
+    @RequestMapping(value = "/test6", produces = "application/json;charset=utf8")
+    public String test6() {
+        log.info("Q6");
+        return "question/q06";
+    }
+    @RequestMapping(value = "/test7", produces = "application/json;charset=utf8")
+    public String test7() {
+        log.info("Q7");
+        return "question/q07";
+    }
+    @RequestMapping(value = "/test8", produces = "application/json;charset=utf8")
+    public String test8() {
+        log.info("Q8");
+        return "question/q08";
+    }
+    @RequestMapping(value = "/test9", produces = "application/json;charset=utf8")
+    public String test9() {
+        log.info("Q9");
+        return "question/q09";
+    }
+    @RequestMapping(value = "/test10", produces = "application/json;charset=utf8")
+    public String test10() {
+        log.info("Q10");
+        return "question/q10";
+    }
+    @RequestMapping(value = "/test11", produces = "application/json;charset=utf8")
+    public String test11() {
+        log.info("Q11");
+        return "question/q11";
+    }
+    @RequestMapping(value = "/test12", produces = "application/json;charset=utf8")
+    public String test12() {
+        log.info("Q12");
+        return "question/q12";
+    }
+    @RequestMapping(value = "/test13", produces = "application/json;charset=utf8")
+    public String test13() {
+        log.info("Q13");
+        return "question/q13";
     }
 
     @RequestMapping(value = "/result", produces = "application/json;charset=utf8")

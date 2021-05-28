@@ -10,6 +10,59 @@
     <noscript data-n-css=""></noscript>
 
     <style></style>
+
+    <script>
+        window.onload = function() {
+            <!-- select button -->
+            var q07 = sessionStorage.getItem('Q07_A');
+
+            if(q07 != null) {
+                var id = "btn" + sessionStorage.getItem('Q07_A');
+
+                document.getElementById(id).style.border="3px solid #E12B7F";
+                document.getElementById(id).style.color="#E12B7F";
+                document.getElementById(id).style.outline="0";
+            }
+        }
+
+        function page(page) {
+            if(page == 'prev') {
+                if(sessionStorage.getItem('Q06_A') != null) {
+                    location.href = '/test6';
+                }
+            } else if(page == 'next') {
+                if(sessionStorage.getItem('Q08_A') != null) {
+                    location.href = '/test8';
+                }
+            }
+        }
+
+        function nextp(val) {
+            if(sessionStorage.getItem('Q07_A') != null) {
+                sessionStorage.removeItem('Q07_A');
+            }
+
+            if(val == 1) {
+                sessionStorage.setItem('Q07_A', 1);
+            } else if(val == 2) {
+                sessionStorage.setItem('Q07_A', 2);
+            }
+            location.href = '/test8';
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--    <script>-->
+    <!--        function nextq() {-->
+    <!--            alert("들어왔단다");-->
+    <!--            $.ajax({-->
+    <!--                url : "q03.html",-->
+    <!--                success : function(result) {-->
+    <!--                    $('#ant-layout-content').html(result);-->
+    <!--                    alert("우하하");-->
+    <!--                }-->
+    <!--            });-->
+    <!--        }-->
+    <!--    </script>-->
 </head>
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>
@@ -35,47 +88,6 @@
 <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async=""></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
-<script>
-    window.onload = function() {
-        var q03 = sessionStorage.getItem('Q03_A');
-        if(q03 != null) {
-            var id = "btn" + sessionStorage.getItem('Q03_A');
-
-            document.getElementById(id).style.border="3px solid #E12B7F";
-            document.getElementById(id).style.color="#E12B7F";
-            document.getElementById(id).style.outline="0";
-        }
-    }
-
-    function page(page) {
-        if(page == 'prev') {
-            if(sessionStorage.getItem('Q02_A') != null) {
-                location.href = '/test2';
-            }
-        } else if(page == 'next') {
-
-        }
-    }
-
-    function nextp(val) {
-        if(sessionStorage.getItem('Q03_A') != null) {
-            sessionStorage.removeItem('Q03_A');
-        }
-
-        if(val == 1) {
-            sessionStorage.setItem('Q03_A', 1);
-        } else if(val == 2) {
-            sessionStorage.setItem('Q03_A', 2);
-        } else if(val == 3) {
-            sessionStorage.setItem('Q03_A', 3);
-        } else if(val == 4) {
-            sessionStorage.setItem('Q03_A', 4);
-        }
-
-        location.href = '/test4';
-    }
-</script>
-
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
 <div id="__next">
     <section class="ant-layout">
@@ -87,16 +99,16 @@
             </div>
         </header>
 
-        <main class="ant-layout-content">
+        <main class="ant-layout-content" id="ant-layout-content">
             <div class="bar-light-gray">
                 <div class="bar-hot-pink"></div>
             </div>
-        <!--                <svg width="480" height="50"></svg>-->
+            <!--                <svg width="480" height="50"></svg>-->
             <div>
                 <div class="ant-space-item" style="margin-bottom:16px">
                     <div class="global-wrapper result question" style="text-align:center">
                         <center>
-                            나의 주말 먹방형태는 주로
+                            친구들과 즐겁게 빙수를 먹고 인스타에 올린다면?
                         </center>
                     </div>
                 </div>
@@ -104,16 +116,10 @@
 
             <div class="ant-space-item" style="margin-bottom:16px">
                 <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(1);">
-                    <font color="#E12B7F">✓</font> 항상 밥약속 술약속이 잡혀 있다. 파티, 모임, 동호회 등등...
+                    <font color="#E12B7F">✓</font> 언제 만나도 즐거운 친구들 #모임
                 </button>
                 <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(2);">
-                    <font color="#E12B7F">✓</font> 집에서 혼자 먹고싶은 거 요리해 먹거나 배달시켜 먹는 게 힐링이지!
-                </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(3);">
-                    <font color="#E12B7F">✓</font> 내가 가고 싶은 모임이 있으면 참석하고 아니면 집에서 먹는다.
-                </button>
-                <button style="width:100%" type="button" class="ant-btn ant-btn-q" onclick="nextp(4);">
-                    <font color="#E12B7F">✓</font> 좋아하는 사람들과 외식이나 홈 파티를 즐긴다.
+                    <font color="#E12B7F">✓</font> 간만에 맛있는 빙수 #설빙
                 </button>
             </div>
         </main>
@@ -129,6 +135,7 @@
                 </div>
             </div>
         </div>
+
         <footer class="ant-layout-footer">© 2021.<!-- -->
             <a style="color:#000;font-weight:bold" href="https://github.com/MiraeChoi" target="_blank">MR CHOI</a> all rights reserved.<br/>
             <a href="https://github.com/MiraeChoi" target="_blank">

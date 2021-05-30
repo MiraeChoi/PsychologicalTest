@@ -22,7 +22,12 @@ class UserDataTest {
 
     @Test
     public void testUserData(UserData userData) {
-        UserData userData1 = new UserData(userData.getUsername(), userData.getQ1(), userData.getQ2(), userData.getQ3());
+        UserData userData1 = new UserData(
+                userData.getUsername(), userData.getQ1(), userData.getQ2(), userData.getQ3(),
+                userData.getQ4(), userData.getQ5(), userData.getQ6(),
+                userData.getQ7(), userData.getQ2(), userData.getQ3(),
+                userData.getQ1(), userData.getQ2(), userData.getQ3(), userData.getQ13()
+                );
 //        UserData userData2 = new UserData("말레이곰", 2, 4, 1);
         em.persist(userData1);
 //        em.persist(userData2);

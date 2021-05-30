@@ -6,21 +6,15 @@ import lombok.extern.slf4j.Slf4j;
 import mr.mbti.entity.UserData;
 import mr.mbti.repository.UserJpaRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.Random;
 
 @Controller
 @Slf4j
 @RequiredArgsConstructor
 public class HomeController {
 
-    HttpSession session;
     private final UserJpaRepository userJpaRepository;
     QueryFactory queryFactory;
 
@@ -117,6 +111,7 @@ public class HomeController {
         int q1 = Integer.parseInt(request.getParameter("q1"));
         int q2 = Integer.parseInt(request.getParameter("q2"));
         int q3 = Integer.parseInt(request.getParameter("q3"));
+        int q4 = 0, q5 = 0, q6 = 0, q7 = 0, q8 = 0, q9 = 0, q10 = 0, q11 = 0, q12 = 0, q13 = 0;
 
         log.info("result :" + q1 + "/" + q2 + "/" + q3);
         String ip = request.getRemoteAddr();
@@ -127,7 +122,7 @@ public class HomeController {
 //        String username = "USER" + String.format("%05d", new Random().nextInt(99999 - 0 + 1));
         String username = "USER" + String.format("%012d", realIp);
 
-        UserData userData = new UserData(username, q1, q2, q3);
+        UserData userData = new UserData(username, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13);
         userJpaRepository.save(userData);
 
         log.info(userData.getUsername());

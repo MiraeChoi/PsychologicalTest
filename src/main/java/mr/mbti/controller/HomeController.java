@@ -35,6 +35,21 @@ public class HomeController {
         return "type/estp";
     }
 
+    @RequestMapping("/types/ESTJ")
+    public String typesESTJ() {
+        return "type/estj";
+    }
+
+    @RequestMapping("/types/ESFP")
+    public String typesESFP() {
+        return "type/esfp";
+    }
+
+    @RequestMapping(value = "/types/INFP", produces = "application/json;charset=utf8")
+    public String typesINFP() {
+        return "type/infp";
+    }
+
     @RequestMapping(value = "/types/INTJ", produces = "application/json;charset=utf8")
     public String typesINTJ() {
         return "type/intj";

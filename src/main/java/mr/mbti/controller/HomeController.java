@@ -45,12 +45,12 @@ public class HomeController {
         return "type/esfp";
     }
 
-    @RequestMapping(value = "/types/INFP", produces = "application/json;charset=utf8")
+    @RequestMapping("/types/INFP")
     public String typesINFP() {
         return "type/infp";
     }
 
-    @RequestMapping(value = "/types/INTJ", produces = "application/json;charset=utf8")
+    @RequestMapping("/types/INTJ")
     public String typesINTJ() {
         return "type/intj";
     }

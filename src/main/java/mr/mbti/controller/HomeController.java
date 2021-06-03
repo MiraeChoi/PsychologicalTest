@@ -34,25 +34,42 @@ public class HomeController {
     public String typesESTP() {
         return "type/estp";
     }
-
     @RequestMapping("/types/ESTJ")
     public String typesESTJ() {
         return "type/estj";
     }
-
     @RequestMapping("/types/ESFP")
     public String typesESFP() {
         return "type/esfp";
     }
+    @RequestMapping("/types/ESFJ")
+    public String typesESFJ() {
+        return "type/esfj";
+    }
+    @RequestMapping("/types/ENFP")
+    public String typesENFP() {
+        return "type/enfp";
+    }
 
+    @RequestMapping("/types/ISTJ")
+    public String typesISTJ() {
+        return "type/istj";
+    }
+    @RequestMapping("/types/INFJ")
+    public String typesINFJ() {
+        return "type/infj";
+    }
     @RequestMapping("/types/INFP")
     public String typesINFP() {
         return "type/infp";
     }
-
     @RequestMapping("/types/INTJ")
     public String typesINTJ() {
         return "type/intj";
+    }
+    @RequestMapping("/types/INTP")
+    public String typesINTP() {
+        return "type/intp";
     }
 
     @RequestMapping(value = "/test1", produces = "application/json;charset=utf8")

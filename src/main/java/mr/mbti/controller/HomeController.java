@@ -50,6 +50,10 @@ public class HomeController {
     public String typesENFP() {
         return "type/enfp";
     }
+    @RequestMapping("/types/ENFJ")
+    public String typesENFJ() {
+        return "type/enfj";
+    }
 
     @RequestMapping("/types/ISTJ")
     public String typesISTJ() {

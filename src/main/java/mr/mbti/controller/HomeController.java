@@ -54,10 +54,30 @@ public class HomeController {
     public String typesENFJ() {
         return "type/enfj";
     }
+    @RequestMapping("/types/ENTP")
+    public String typesENTP() {
+        return "type/entp";
+    }
+    @RequestMapping("/types/ENTJ")
+    public String typesENTJ() {
+        return "type/entj";
+    }
 
     @RequestMapping("/types/ISTJ")
     public String typesISTJ() {
         return "type/istj";
+    }
+    @RequestMapping("/types/ISTP")
+    public String typesISTP() {
+        return "type/istp";
+    }
+    @RequestMapping("/types/ISFJ")
+    public String typesISFJ() {
+        return "type/isfj";
+    }
+    @RequestMapping("/types/ISFP")
+    public String typesISFP() {
+        return "type/isfp";
     }
     @RequestMapping("/types/INFJ")
     public String typesINFJ() {

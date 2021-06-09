@@ -47,6 +47,9 @@
             document.getElementById(id).style.color="#E12B7F";
             document.getElementById(id).style.outline="0";
         }
+
+        sessionStorage.setItem('E', 0);
+        sessionStorage.setItem('I', 0);
     }
 
     function page(page) {
@@ -63,14 +66,21 @@
             sessionStorage.removeItem('Q01_A');
         }
 
+        var e = sessionStorage.getItem('E');
+        var i = sessionStorage.getItem('I');
+
         if(val == 1) {
             sessionStorage.setItem('Q01_A', 1);
+            sessionStorage.setItem('E', Number(e + 1));
         } else if(val == 2) {
             sessionStorage.setItem('Q01_A', 2);
+            sessionStorage.setItem('I', Number(i + 1));
         } else if(val == 3) {
             sessionStorage.setItem('Q01_A', 3);
+            sessionStorage.setItem('I', Number(i + 1);
         } else if(val == 4) {
             sessionStorage.setItem('Q01_A', 4);
+            sessionStorage.setItem('E', Number(e + 1));
         }
         location.href = '/test2';
     }

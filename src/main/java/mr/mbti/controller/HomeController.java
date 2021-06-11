@@ -30,68 +30,68 @@ public class HomeController {
         return "types";
     }
 
-    @RequestMapping("/types/ESTP")
+    @RequestMapping(value = "/types/ESTP", produces = "application/json;charset=utf8")
     public String typesESTP() {
         return "type/estp";
     }
-    @RequestMapping("/types/ESTJ")
+    @RequestMapping(value = "/types/ESTJ", produces = "application/json;charset=utf8")
     public String typesESTJ() {
         return "type/estj";
     }
-    @RequestMapping("/types/ESFP")
+    @RequestMapping(value = "/types/ESFP", produces = "application/json;charset=utf8")
     public String typesESFP() {
         return "type/esfp";
     }
-    @RequestMapping("/types/ESFJ")
+    @RequestMapping(value = "/types/ESFJ", produces = "application/json;charset=utf8")
     public String typesESFJ() {
         return "type/esfj";
     }
-    @RequestMapping("/types/ENFP")
+    @RequestMapping(value = "/types/ENFP", produces = "application/json;charset=utf8")
     public String typesENFP() {
         return "type/enfp";
     }
-    @RequestMapping("/types/ENFJ")
+    @RequestMapping(value = "/types/ENFJ", produces = "application/json;charset=utf8")
     public String typesENFJ() {
         return "type/enfj";
     }
-    @RequestMapping("/types/ENTP")
+    @RequestMapping(value = "/types/ENTP", produces = "application/json;charset=utf8")
     public String typesENTP() {
         return "type/entp";
     }
-    @RequestMapping("/types/ENTJ")
+    @RequestMapping(value = "/types/ENTJ", produces = "application/json;charset=utf8")
     public String typesENTJ() {
         return "type/entj";
     }
 
-    @RequestMapping("/types/ISTJ")
+    @RequestMapping(value = "/types/ISTJ", produces = "application/json;charset=utf8")
     public String typesISTJ() {
         return "type/istj";
     }
-    @RequestMapping("/types/ISTP")
+    @RequestMapping(value = "/types/ISTP", produces = "application/json;charset=utf8")
     public String typesISTP() {
         return "type/istp";
     }
-    @RequestMapping("/types/ISFJ")
+    @RequestMapping(value = "/types/ISFJ", produces = "application/json;charset=utf8")
     public String typesISFJ() {
         return "type/isfj";
     }
-    @RequestMapping("/types/ISFP")
+    @RequestMapping(value = "/types/ISFP", produces = "application/json;charset=utf8")
     public String typesISFP() {
         return "type/isfp";
     }
-    @RequestMapping("/types/INFJ")
+    @RequestMapping(value = "/types/INFJ", produces = "application/json;charset=utf8")
     public String typesINFJ() {
         return "type/infj";
     }
-    @RequestMapping("/types/INFP")
+    @RequestMapping(value = "/types/INFP", produces = "application/json;charset=utf8")
     public String typesINFP() {
         return "type/infp";
     }
-    @RequestMapping("/types/INTJ")
+    @RequestMapping(value = "/types/INTJ", produces = "application/json;charset=utf8")
     public String typesINTJ() {
         return "type/intj";
     }
-    @RequestMapping("/types/INTP")
+    @RequestMapping(value = "/types/INTP", produces = "application/json;charset=utf8")
     public String typesINTP() {
         return "type/intp";
     }

@@ -62,14 +62,26 @@
             sessionStorage.removeItem('Q03_A');
         }
 
+        var e = sessionStorage.getItem('E');
+        var i = sessionStorage.getItem('I');
+
+        if(e == null || i == null) {
+            e = 0;
+            i = 0;
+        }
+
         if(val == 1) {
             sessionStorage.setItem('Q03_A', 1);
+            sessionStorage.setItem('E', Number(e + 1));
         } else if(val == 2) {
             sessionStorage.setItem('Q03_A', 2);
+            sessionStorage.setItem('I', Number(i + 1));
         } else if(val == 3) {
             sessionStorage.setItem('Q03_A', 3);
+            sessionStorage.setItem('I', Number(i + 1));
         } else if(val == 4) {
             sessionStorage.setItem('Q03_A', 4);
+            sessionStorage.setItem('E', Number(e + 1));
         }
 
         location.href = '/test4';

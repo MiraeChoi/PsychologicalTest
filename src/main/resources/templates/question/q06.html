@@ -23,6 +23,9 @@
                 document.getElementById(id).style.color="#E12B7F";
                 document.getElementById(id).style.outline="0";
             }
+
+            sessionStorage.setItem('S', 0);
+            sessionStorage.setItem('N', 0);
         }
 
         function page(page) {
@@ -42,14 +45,21 @@
                 sessionStorage.removeItem('Q06_A');
             }
 
+            var s = sessionStorage.getItem('S');
+            var n = sessionStorage.getItem('N');
+
             if(val == 1) {
                 sessionStorage.setItem('Q06_A', 1);
+                sessionStorage.setItem('S', Number(s + 1));
             } else if(val == 2) {
                 sessionStorage.setItem('Q06_A', 2);
+                sessionStorage.setItem('N', Number(n + 1));
             } else if(val == 3) {
                 sessionStorage.setItem('Q06_A', 3);
+                sessionStorage.setItem('N', Number(n + 1));
             } else if(val == 4) {
                 sessionStorage.setItem('Q06_A', 4);
+                sessionStorage.setItem('S', Number(s + 1));
             }
             location.href = '/test7';
         }

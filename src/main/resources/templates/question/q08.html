@@ -42,14 +42,21 @@
                 sessionStorage.removeItem('Q08_A');
             }
 
+            var t = sessionStorage.getItem('T');
+            var f = sessionStorage.getItem('F');
+
             if(val == 1) {
                 sessionStorage.setItem('Q08_A', 1);
+                sessionStorage.setItem('T', Number(t + 1));
             } else if(val == 2) {
                 sessionStorage.setItem('Q08_A', 2);
+                sessionStorage.setItem('T', Number(t + 1));
             } else if(val == 3) {
                 sessionStorage.setItem('Q08_A', 3);
+                sessionStorage.setItem('F', Number(f + 1));
             } else if(val == 4) {
                 sessionStorage.setItem('Q08_A', 4);
+                sessionStorage.setItem('F', Number(f + 1));
             }
             location.href = '/test9';
         }

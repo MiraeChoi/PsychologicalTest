@@ -62,9 +62,13 @@
             sessionStorage.removeItem('Q13_A');
         }
 
+        var t = sessionStorage.getItem('T');
+        var f = sessionStorage.getItem('F');
+
         if(val == 1) {
             sessionStorage.setItem('Q13_A', 1);
             var id = "btn" + sessionStorage.getItem('Q13_A');
+            sessionStorage.setItem('T', Number(t + 1));
 
             document.getElementById("btn2").style.border="3px solid #D3D3D3";
             document.getElementById("btn2").style.color="#000";
@@ -72,6 +76,7 @@
         } else if(val == 2) {
             sessionStorage.setItem('Q13_A', 2);
             var id = "btn" + sessionStorage.getItem('Q13_A');
+            sessionStorage.setItem('F', Number(f + 1));
 
             document.getElementById("btn1").style.border="3px solid #D3D3D3";
             document.getElementById("btn1").style.color="#000";

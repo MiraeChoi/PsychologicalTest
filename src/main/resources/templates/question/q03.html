@@ -65,8 +65,10 @@
         var e = sessionStorage.getItem('E');
         var i = sessionStorage.getItem('I');
 
-        if(e == null || i == null) {
+        if(e == null) {
             e = 0;
+        }
+        if(i == null) {
             i = 0;
         }
 

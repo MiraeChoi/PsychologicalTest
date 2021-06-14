@@ -42,27 +42,20 @@
                 sessionStorage.removeItem('Q07_A');
             }
 
+            var s = sessionStorage.getItem('S');
+            var n = sessionStorage.getItem('N');
+
             if(val == 1) {
                 sessionStorage.setItem('Q07_A', 1);
+                sessionStorage.setItem('S', Number(s + 1));
             } else if(val == 2) {
                 sessionStorage.setItem('Q07_A', 2);
+                sessionStorage.setItem('N', Number(n + 1));
             }
             location.href = '/test8';
         }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--    <script>-->
-    <!--        function nextq() {-->
-    <!--            alert("들어왔단다");-->
-    <!--            $.ajax({-->
-    <!--                url : "q03.html",-->
-    <!--                success : function(result) {-->
-    <!--                    $('#ant-layout-content').html(result);-->
-    <!--                    alert("우하하");-->
-    <!--                }-->
-    <!--            });-->
-    <!--        }-->
-    <!--    </script>-->
 </head>
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>

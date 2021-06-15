@@ -88,12 +88,46 @@
     }
 
     function result() {
-        var q01a = sessionStorage.getItem('Q01_A');
-        var q02a = sessionStorage.getItem('Q02_A');
-        var q03a = sessionStorage.getItem('Q03_A');
+        var result = "";
 
-        location.href = '/result?q1=' + q01a + '&q2=' + q02a + '&q3=' + q03a;
-        alert("결과 : " + q02a + "\n결과 : " + q03a);
+        var e = sessionStorage.getItem('E');
+        var i = sessionStorage.getItem('I');
+
+        if(Number(e) > Number(i)) {
+            result += "E";
+        } else {
+            result += "I";
+        }
+
+        var s = sessionStorage.getItem('S');
+        var n = sessionStorage.getItem('N');
+
+        if(Number(s) > Number(n)) {
+            result += "S";
+        } else {
+            result += "N";
+        }
+
+        var t = sessionStorage.getItem('T');
+        var f = sessionStorage.getItem('F');
+
+        if(Number(t) > Number(f)) {
+            result += "T";
+        } else {
+            result += "F";
+        }
+
+        var j = sessionStorage.getItem('J');
+        var p = sessionStorage.getItem('P');
+
+        if(Number(j) > Number(p)) {
+            result += "J";
+        } else {
+            result += "P";
+        }
+
+        alert("확인 : " + result);
+        location.href = '/result?type=' + result;
     }
 </script>
 

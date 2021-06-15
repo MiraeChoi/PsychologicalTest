@@ -32,68 +32,68 @@ public class HomeController {
 
     @RequestMapping(value = "/types/ESTP", produces = "application/json;charset=utf8")
     public String typesESTP() {
-        return "type/estp";
+        return "types/estp";
     }
     @RequestMapping(value = "/types/ESTJ", produces = "application/json;charset=utf8")
     public String typesESTJ() {
-        return "type/estj";
+        return "types/estj";
     }
     @RequestMapping(value = "/types/ESFP", produces = "application/json;charset=utf8")
     public String typesESFP() {
-        return "type/esfp";
+        return "types/esfp";
     }
     @RequestMapping(value = "/types/ESFJ", produces = "application/json;charset=utf8")
     public String typesESFJ() {
-        return "type/esfj";
+        return "types/esfj";
     }
     @RequestMapping(value = "/types/ENFP", produces = "application/json;charset=utf8")
     public String typesENFP() {
-        return "type/enfp";
+        return "types/enfp";
     }
     @RequestMapping(value = "/types/ENFJ", produces = "application/json;charset=utf8")
     public String typesENFJ() {
-        return "type/enfj";
+        return "types/enfj";
     }
     @RequestMapping(value = "/types/ENTP", produces = "application/json;charset=utf8")
     public String typesENTP() {
-        return "type/entp";
+        return "types/entp";
     }
     @RequestMapping(value = "/types/ENTJ", produces = "application/json;charset=utf8")
     public String typesENTJ() {
-        return "type/entj";
+        return "types/entj";
     }
 
     @RequestMapping(value = "/types/ISTJ", produces = "application/json;charset=utf8")
     public String typesISTJ() {
-        return "type/istj";
+        return "types/istj";
     }
     @RequestMapping(value = "/types/ISTP", produces = "application/json;charset=utf8")
     public String typesISTP() {
-        return "type/istp";
+        return "types/istp";
     }
     @RequestMapping(value = "/types/ISFJ", produces = "application/json;charset=utf8")
     public String typesISFJ() {
-        return "type/isfj";
+        return "types/isfj";
     }
     @RequestMapping(value = "/types/ISFP", produces = "application/json;charset=utf8")
     public String typesISFP() {
-        return "type/isfp";
+        return "types/isfp";
     }
     @RequestMapping(value = "/types/INFJ", produces = "application/json;charset=utf8")
     public String typesINFJ() {
-        return "type/infj";
+        return "types/infj";
     }
     @RequestMapping(value = "/types/INFP", produces = "application/json;charset=utf8")
     public String typesINFP() {
-        return "type/infp";
+        return "types/infp";
     }
     @RequestMapping(value = "/types/INTJ", produces = "application/json;charset=utf8")
     public String typesINTJ() {
-        return "type/intj";
+        return "types/intj";
     }
     @RequestMapping(value = "/types/INTP", produces = "application/json;charset=utf8")
     public String typesINTP() {
-        return "type/intp";
+        return "types/intp";
     }
 
     @RequestMapping(value = "/test1", produces = "application/json;charset=utf8")
@@ -164,12 +164,11 @@ public class HomeController {
 
     @RequestMapping(value = "/result", produces = "application/json;charset=utf8")
     public String result(HttpServletRequest request) {
-        int q1 = Integer.parseInt(request.getParameter("q1"));
-        int q2 = Integer.parseInt(request.getParameter("q2"));
-        int q3 = Integer.parseInt(request.getParameter("q3"));
-        int q4 = 0, q5 = 0, q6 = 0, q7 = 0, q8 = 0, q9 = 0, q10 = 0, q11 = 0, q12 = 0, q13 = 0;
+        String result = request.getParameter("type");
 
-        log.info("result :" + q1 + "/" + q2 + "/" + q3);
+//        int q1 = Integer.parseInt(request.getParameter("q1"));
+        int q1 = 0, q2 = 0, q3 = 0, q4 = 0, q5 = 0, q6 = 0, q7 = 0, q8 = 0, q9 = 0, q10 = 0, q11 = 0, q12 = 0, q13 = 0;
+
         String ip = request.getRemoteAddr();
         ip = ip.replaceAll(":", "");
         int realIp = Integer.parseInt(ip);
@@ -178,54 +177,12 @@ public class HomeController {
 //        String username = "USER" + String.format("%05d", new Random().nextInt(99999 - 0 + 1));
         String username = "USER" + String.format("%012d", realIp);
 
-        UserData userData = new UserData(username, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13);
+        UserData userData = new UserData(username, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, result);
         userJpaRepository.save(userData);
 
         log.info(userData.getUsername());
 
-        if(q3 == 1 || q3 == 2) return "type/estp";
-        else if(q3 == 3 || q3 == 4) return "type/intj";
-
-        return "result";
+        return "types/" + result;
     }
-
-    /*
-//    @PostMapping("/result/{result}")
-//    public String result(@PathVariable("Q03_A") String result, HttpSession session, HttpServletRequest request, HttpServletResponse reponse){
-    @RequestMapping(value = "/result/{result}", produces = "application/json;charset=utf8")
-    public String result(@PathVariable("Q03_A") Object result, HttpSession session, HttpServletRequest request, HttpServletResponse reponse) throws ServletException, IOException {
-        session = request.getSession();
-        log.info("들어왔단다");
-
-        String result02 = (String)session.getAttribute("Q02_A");
-        Object result1 = session.getAttribute("Q02_A");
-        String result03 = (String)session.getAttribute("Q03_A");
-        System.out.println("result = " + result1);
-        log.info("값 : " + result1);
-
-        //여기서 결과에 따라 return값이 달라짐
-        if(result03 != null) {
-            log.info("값이 들어옴");
-
-            if(result == "1") {
-                log.info("1 : intj");
-                return "type/intj";
-            } else if(result == "2") {
-                log.info("2 : estp");
-                return "type/estp";
-            } else if(result == "3") {
-                log.info("3 : result");
-                return "우하하3";
-            } else if(result == "4") {
-                log.info("4 : result");
-                return "우하하4";
-            }
-
-            return "result";
-        } else {
-            return "result";
-        }
-    }
-     */
 }
 

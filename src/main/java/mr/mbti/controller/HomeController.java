@@ -5,10 +5,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mr.mbti.entity.UserData;
 import mr.mbti.repository.UserJpaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -18,15 +22,25 @@ public class HomeController {
     private final UserJpaRepository userJpaRepository;
     QueryFactory queryFactory;
 
+    @Autowired
+    EntityManager em;
+
     @RequestMapping("/")
     public String home() {
-        log.info("Home Controller!!! 와아앙ㅇ");
+        log.info("Main View");
         return "home";
     }
 
     @RequestMapping("/types")
-    public String types() {
+    public String types(Model model) {
         log.info("전체 유형 보기");
+        List<UserData> userList = em.createQuery("select u from UserData u", UserData.class)
+                .getResultList();
+        int userCount = em.createQuery("select COUNT(*) from UserData u", Integer.class)
+                .getSingleResult();
+
+        model.addAttribute("count", userCount);
+
         return "types";
     }
 

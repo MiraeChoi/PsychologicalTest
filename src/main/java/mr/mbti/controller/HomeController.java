@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Controller
 @Slf4j
 @RequiredArgsConstructor
+@Transactional
 public class HomeController {
 
     private final UserJpaRepository userJpaRepository;
@@ -34,12 +36,20 @@ public class HomeController {
     @RequestMapping("/types")
     public String types(Model model) {
         log.info("전체 유형 보기");
+
+        UserData userData1 = new UserData("USER000000234234", 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2, "INFP");
+        em.persist(userData1);
+
+        em.flush();
+        em.clear();
+
         List<UserData> userList = em.createQuery("select u from UserData u", UserData.class)
                 .getResultList();
-        int userCount = em.createQuery("select COUNT(*) from UserData u", Integer.class)
+        long userCount = em.createQuery("select COUNT(*) from UserData u", Long.class)
                 .getSingleResult();
 
         model.addAttribute("count", userCount);
+        log.info("count : " + userCount);
 
         return "types";
     }

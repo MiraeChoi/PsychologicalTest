@@ -48,8 +48,8 @@ public class HomeController {
         long userCount = em.createQuery("select COUNT(*) from UserData u", Long.class)
                 .getSingleResult();
 
-        model.addAttribute("count", userCount);
-        log.info("count : " + userCount);
+        model.addAttribute("userCount", userCount);
+        log.info("userCount : " + userCount);
 
         return "types";
     }

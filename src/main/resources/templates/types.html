@@ -56,7 +56,6 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <body>
-    <p th:text="${userCount}"></p> 우하하
     <div id="__next">
         <section class="ant-layout">
             <header class="ant-layout-header global-header">
@@ -67,7 +66,7 @@
                 <div class="ant-space ant-space-vertical">
                     <div class="ant-space-item" style="margin-bottom:16px">
                         <div class="global-wrapper result" style="display:flex;flex-direction:column">
-                            <h2><%=request.getAttribute("userCount")%>명의 농담곰유형!</h2> <br/>
+                            <h2 th:text="|${userCount}명의 농담곰유형!|"></h2> <br/>
 
                             <p style="text-align:center">
                                 평소 MBTI와 다르다구요?<br/>

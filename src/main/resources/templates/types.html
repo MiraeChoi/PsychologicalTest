@@ -54,6 +54,11 @@
 <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async=""></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script>
+    function percent() {
+        alert("날 불렀느냐");
+    }
+</script>
 
 <body>
     <div id="__next">
@@ -76,7 +81,7 @@
                             <div class="ant-radio-group ant-radio-group-outline">
                                 <label class="ant-radio-button-wrapper">
                                     <span class="ant-radio-button">
-                                        <input type="radio" class="ant-radio-button-input" name="select" value="count"/>
+                                        <input type="radio" class="ant-radio-button-input" name="select" value="count" onclick="percent();"/>
                                         <span class="ant-radio-button-inner"></span>
                                     </span>
                                     <span>%</span>
@@ -90,7 +95,7 @@
                                 </label>
                             </div>
 
-                            <div class="ant-row" style="margin-top:-8px;margin-bottom:-8px;">
+                            <div class="ant-row" id="div_per" style="margin-top:-8px;margin-bottom:-8px;">
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span> </span>
                                     <a href="/types/ESTP"><img alt="ESTP" style="width:100%" src="../img/ndg_estp.png"/></a>

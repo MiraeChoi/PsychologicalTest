@@ -56,13 +56,17 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
     function percent() {
-        alert("날 불렀느냐");
         var p = document.querySelector(".global-wrapper > p");
+        var select = document.getElementsByName("select")[0];
+        alert("확인 : " + select);
+
         p.innerHTML="어떤 유형이 가장 많을까요?<br />농담곰유형은 재미용이라는 점, 아시죠? 😘";
+        select.style.border="1px solid red";
     }
 
     function medal() {
         var p = document.querySelector(".global-wrapper > p");
+        var select = document.getElementsByName("select")[1];
         p.innerHTML="먹는 데 가장 많은 돈을 지출하는 유형 순서입니다.<br />정확도가 떨어지므로 꼭 재미로만 참고합시다😁";
     }
 </script>

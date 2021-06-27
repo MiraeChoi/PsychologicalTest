@@ -55,6 +55,11 @@
 <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async=""></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
+    window.onload = function() {
+        var span = document.querySelector(".ant-row > div > span"[1]);
+        span.innerHTML="퍼센트(%)";
+    }
+
     function percent() {
         var p = document.querySelector(".global-wrapper > p");
         var per = document.querySelectorAll(".ant-radio-button-wrapper > span")[1];
@@ -109,7 +114,7 @@
 
                             <div class="ant-row" id="div_per" style="margin-top:-8px;margin-bottom:-8px;">
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span> </span>
+                                    <span> 19.0% </span>
                                     <a href="/types/ESTP"><img alt="ESTP" style="width:100%" src="../img/ndg_estp.png"/></a>
                                 </div>
 

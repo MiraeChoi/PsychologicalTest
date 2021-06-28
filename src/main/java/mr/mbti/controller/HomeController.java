@@ -47,8 +47,9 @@ public class HomeController {
                 .getResultList();
         long userCount = em.createQuery("select COUNT(*) from UserData u", Long.class)
                 .getSingleResult();
-        List<String> result = em.createQuery("select result, COUNT(*) from UserData u group by result", String.class)
-                .getResultList();
+//        em.createQuery("select result from UserData u where username like '%INFP%' group by result", String.class);
+        int result = em.createQuery("select COUNT(result) from UserData u where username like '%INFP%' group by result", Integer.class)
+                .getSingleResult();
 
         model.addAttribute("userCount", userCount);
         model.addAttribute("result", result);

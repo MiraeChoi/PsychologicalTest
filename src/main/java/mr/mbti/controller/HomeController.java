@@ -38,7 +38,11 @@ public class HomeController {
         log.info("전체 유형 보기");
 
         UserData userData1 = new UserData("USER000000234234", 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2, "INFP");
+        UserData userData2 = new UserData("USER000000123456", 1, 2, 3, 4, 2, 1, 2, 3, 4, 3, 2, 1, 1, "INFP");
+        UserData userData3 = new UserData("USER000000654321", 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 1, "ENTJ");
         em.persist(userData1);
+        em.persist(userData2);
+        em.persist(userData3);
 
         em.flush();
         em.clear();
@@ -50,9 +54,12 @@ public class HomeController {
 //        em.createQuery("select result from UserData u where username like '%INFP%' group by result", String.class);
         long infp = em.createQuery("select COUNT(*) from UserData u where result like '%INFP%'", Long.class)
                 .getSingleResult();
+        long entj = em.createQuery("select COUNT(*) from UserData u where result like '%ENTJ%'", Long.class)
+                .getSingleResult();
 
         model.addAttribute("userCount", userCount);
-        model.addAttribute("result", infp/userCount);
+        model.addAttribute("infp", infp/userCount);
+        model.addAttribute("entj", entj/userCount);
         log.info("userCount : " + userCount);
 
         return "types";

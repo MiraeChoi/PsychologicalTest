@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
+import java.text.DecimalFormat;
 import java.util.List;
 
 @Controller
@@ -57,9 +58,11 @@ public class HomeController {
         long entj = em.createQuery("select COUNT(*) from UserData u where result like '%ENTJ%'", Long.class)
                 .getSingleResult();
 
+        DecimalFormat form = new DecimalFormat("#.##");
+
         model.addAttribute("userCount", userCount);
-        model.addAttribute("infp", infp/userCount);
-        model.addAttribute("entj", entj/userCount);
+        model.addAttribute("infp", form.format(infp/userCount));
+        model.addAttribute("entj", form.format(entj/userCount));
         log.info("userCount : " + userCount);
 
         return "types";

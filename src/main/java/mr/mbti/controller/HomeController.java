@@ -59,14 +59,17 @@ public class HomeController {
                 .getSingleResult();
 
         DecimalFormat form = new DecimalFormat("#.##");
-        float infp2 = infp/userCount;
-        float entj2 = entj/userCount;
+        float infp2 = (float)(infp)/userCount * 100;
+        float entj2 = (float)(entj)/userCount * 100;
+        log.info("userCount : " + userCount);
+        log.info("infp 몇 명? : " + infp);
+        log.info("entj 몇 명? : " + entj);
+        log.info("infp : " + form.format(infp2));
+        log.info("entj : " + form.format(entj2));
 
         model.addAttribute("userCount", userCount);
         model.addAttribute("infp", form.format(infp2));
         model.addAttribute("entj", form.format(entj2));
-        log.info("infp : " + infp2);
-        log.info("entj : " + entj2);
 
         return "types";
     }

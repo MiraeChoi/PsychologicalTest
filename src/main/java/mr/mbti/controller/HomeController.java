@@ -52,10 +52,34 @@ public class HomeController {
                 .getResultList();
         long userCount = em.createQuery("select COUNT(*) from UserData u", Long.class)
                 .getSingleResult();
-//        em.createQuery("select result from UserData u where username like '%INFP%' group by result", String.class);
-        long infp = em.createQuery("select COUNT(*) from UserData u where result like '%INFP%'", Long.class)
+
+        long estp_tmp = 0;
+
+        for(int i = 0; i < userList.size(); i++) {
+            if (userList.get(i).getResult().equals("ESTP")) {
+
+            }
+        }
+
+        long estp = em.createQuery("select COUNT(*) from UserData u where result like '%ESTP%'", Long.class)
+                .getSingleResult();
+        long estj = em.createQuery("select COUNT(*) from UserData u where result like '%ESTJ%'", Long.class)
+                .getSingleResult();
+        long esfp = em.createQuery("select COUNT(*) from UserData u where result like '%ESFP%'", Long.class)
+                .getSingleResult();
+        long esfj = em.createQuery("select COUNT(*) from UserData u where result like '%ESFJ%'", Long.class)
+                .getSingleResult();
+
+        long entp = em.createQuery("select COUNT(*) from UserData u where result like '%ENTP%'", Long.class)
                 .getSingleResult();
         long entj = em.createQuery("select COUNT(*) from UserData u where result like '%ENTJ%'", Long.class)
+                .getSingleResult();
+        long enfp = em.createQuery("select COUNT(*) from UserData u where result like '%ENFP%'", Long.class)
+                .getSingleResult();
+        long enfj = em.createQuery("select COUNT(*) from UserData u where result like '%ENFJ%'", Long.class)
+                .getSingleResult();
+
+        long infp = em.createQuery("select COUNT(*) from UserData u where result like '%INFP%'", Long.class)
                 .getSingleResult();
 
         DecimalFormat form = new DecimalFormat("#.##");
@@ -70,6 +94,7 @@ public class HomeController {
         model.addAttribute("userCount", userCount);
         model.addAttribute("infp", form.format(infp2));
         model.addAttribute("entj", form.format(entj2));
+        model.addAttribute("estp", form.format(estp));
 
         return "types";
     }

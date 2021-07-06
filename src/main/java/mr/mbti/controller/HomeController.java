@@ -41,9 +41,11 @@ public class HomeController {
         UserData userData1 = new UserData("USER000000234234", 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2, "INFP");
         UserData userData2 = new UserData("USER000000123456", 1, 2, 3, 4, 2, 1, 2, 3, 4, 3, 2, 1, 1, "INFP");
         UserData userData3 = new UserData("USER000000654321", 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 1, "ENTJ");
+        UserData userData4 = new UserData("USER000000145728", 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, "ENFP");
         em.persist(userData1);
         em.persist(userData2);
         em.persist(userData3);
+        em.persist(userData4);
 
         em.flush();
         em.clear();
@@ -52,49 +54,51 @@ public class HomeController {
                 .getResultList();
         long userCount = em.createQuery("select COUNT(*) from UserData u", Long.class)
                 .getSingleResult();
+        //        long infp = em.createQuery("select COUNT(*) from UserData u where result like '%INFP%'", Long.class).getSingleResult();
 
-        long estp_tmp = 0;
+        long estpCount = 0, estjCount = 0, esfpCount = 0, esfjCount = 0, entpCount = 0, entjCount = 0, enfpCount = 0, enfjCount = 0;
+        long istpCount = 0, istjCount = 0, isfpCount = 0, isfjCount = 0, intpCount = 0, intjCount = 0, infpCount = 0, infjCount = 0;
 
         for(int i = 0; i < userList.size(); i++) {
-            if (userList.get(i).getResult().equals("ESTP")) {
+            if (userList.get(i).getResult().equals("ESTP")) estpCount++;
+            if (userList.get(i).getResult().equals("ESTJ")) estjCount++;
+            if (userList.get(i).getResult().equals("ESFP")) esfpCount++;
+            if (userList.get(i).getResult().equals("ESFJ")) esfjCount++;
+            if (userList.get(i).getResult().equals("ENTP")) entpCount++;
+            if (userList.get(i).getResult().equals("ENTJ")) entjCount++;
+            if (userList.get(i).getResult().equals("ENFP")) enfpCount++;
+            if (userList.get(i).getResult().equals("ENFJ")) enfjCount++;
 
-            }
+            if (userList.get(i).getResult().equals("ISTP")) istpCount++;
+            if (userList.get(i).getResult().equals("ISTJ")) istjCount++;
+            if (userList.get(i).getResult().equals("ISFP")) isfpCount++;
+            if (userList.get(i).getResult().equals("ISFJ")) isfjCount++;
+            if (userList.get(i).getResult().equals("INTP")) intpCount++;
+            if (userList.get(i).getResult().equals("INTJ")) intjCount++;
+            if (userList.get(i).getResult().equals("INFP")) infpCount++;
+            if (userList.get(i).getResult().equals("INFJ")) infjCount++;
         }
 
-        long estp = em.createQuery("select COUNT(*) from UserData u where result like '%ESTP%'", Long.class)
-                .getSingleResult();
-        long estj = em.createQuery("select COUNT(*) from UserData u where result like '%ESTJ%'", Long.class)
-                .getSingleResult();
-        long esfp = em.createQuery("select COUNT(*) from UserData u where result like '%ESFP%'", Long.class)
-                .getSingleResult();
-        long esfj = em.createQuery("select COUNT(*) from UserData u where result like '%ESFJ%'", Long.class)
-                .getSingleResult();
-
-        long entp = em.createQuery("select COUNT(*) from UserData u where result like '%ENTP%'", Long.class)
-                .getSingleResult();
-        long entj = em.createQuery("select COUNT(*) from UserData u where result like '%ENTJ%'", Long.class)
-                .getSingleResult();
-        long enfp = em.createQuery("select COUNT(*) from UserData u where result like '%ENFP%'", Long.class)
-                .getSingleResult();
-        long enfj = em.createQuery("select COUNT(*) from UserData u where result like '%ENFJ%'", Long.class)
-                .getSingleResult();
-
-        long infp = em.createQuery("select COUNT(*) from UserData u where result like '%INFP%'", Long.class)
-                .getSingleResult();
-
         DecimalFormat form = new DecimalFormat("#.##");
-        float infp2 = (float)(infp)/userCount * 100;
-        float entj2 = (float)(entj)/userCount * 100;
-        log.info("userCount : " + userCount);
-        log.info("infp 몇 명? : " + infp);
-        log.info("entj 몇 명? : " + entj);
-        log.info("infp : " + form.format(infp2));
-        log.info("entj : " + form.format(entj2));
 
         model.addAttribute("userCount", userCount);
-        model.addAttribute("infp", form.format(infp2));
-        model.addAttribute("entj", form.format(entj2));
-        model.addAttribute("estp", form.format(estp));
+        model.addAttribute("estp", form.format((float)(estpCount)/userCount * 100));
+        model.addAttribute("estj", form.format((float)(estjCount)/userCount * 100));
+        model.addAttribute("esfp", form.format((float)(esfpCount)/userCount * 100));
+        model.addAttribute("esfj", form.format((float)(esfjCount)/userCount * 100));
+        model.addAttribute("entp", form.format((float)(entpCount)/userCount * 100));
+        model.addAttribute("entj", form.format((float)(entjCount)/userCount * 100));
+        model.addAttribute("enfp", form.format((float)(enfpCount)/userCount * 100));
+        model.addAttribute("enfj", form.format((float)(enfjCount)/userCount * 100));
+
+        model.addAttribute("istp", form.format((float)(istpCount)/userCount * 100));
+        model.addAttribute("istj", form.format((float)(istjCount)/userCount * 100));
+        model.addAttribute("isfp", form.format((float)(isfpCount)/userCount * 100));
+        model.addAttribute("isfj", form.format((float)(isfjCount)/userCount * 100));
+        model.addAttribute("intp", form.format((float)(intpCount)/userCount * 100));
+        model.addAttribute("intj", form.format((float)(intjCount)/userCount * 100));
+        model.addAttribute("infp", form.format((float)(infpCount)/userCount * 100));
+        model.addAttribute("infj", form.format((float)(infjCount)/userCount * 100));
 
         return "types";
     }

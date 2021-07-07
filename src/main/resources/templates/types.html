@@ -63,9 +63,11 @@
     function percent() {
         var p = document.querySelector(".global-wrapper > p");
         var per = document.querySelectorAll(".ant-radio-button-wrapper > span")[1];
+        var span = document.querySelectorAll(".ant-row > div > span");
 
         p.innerHTML="어떤 유형이 가장 많을까요?<br />농담곰유형은 재미용이라는 점, 아시죠? 😘";
         per.style.color="#ED5396";
+        span.style.display="block";
     }
 
     function medal() {
@@ -111,84 +113,84 @@
                                 </label>
                             </div>
 
-                            <div class="ant-row" id="div_per" style="margin-top:-8px;margin-bottom:-8px;">
+                            <div class="ant-row" style="margin-top:-8px;margin-bottom:-8px;">
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span th:text="|${estp}%|"></span>
+                                    <span style="display:none" th:text="|${estp}%|"></span>
                                     <a href="/types/ESTP"><img alt="ESTP" style="width:100%" src="../img/ndg_estp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span th:text="|${estj}%|"></span>
+                                    <span style="display:none" th:text="|${estj}%|"></span>
                                     <a href="/types/ESTJ"><img alt="ESTJ" style="width:100%" src="../img/ndg_estj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span th:text="|${esfp}%|"></span>
+                                    <span style="display:none" th:text="|${esfp}%|"></span>
                                     <a href="/types/ESFP"><img alt="ESFP" style="width:100%" src="../img/ndg_esfp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span th:text="|${esfj}%|"></span>
+                                    <span style="display:none" th:text="|${esfj}%|"></span>
                                     <a href="/types/ESFJ"><img alt="ESFJ" style="width:100%" src="../img/ndg_esfj.png"/></a>
                                 </div><br />
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span th:text="|${enfp}%|"></span>
+                                    <span style="display:none" th:text="|${enfp}%|"></span>
                                     <a href="/types/ENFP"><img alt="ENFP" style="width:100%" src="../img/ndg_enfp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span th:text="|${enfj}%|"></span>
+                                    <span style="display:none" th:text="|${enfj}%|"></span>
                                     <a href="/types/ENFJ"><img alt="ENFJ" style="width:100%" src="../img/ndg_enfj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span th:text="|${entp}%|"></span>
+                                    <span style="display:none" th:text="|${entp}%|"></span>
                                     <a href="/types/ENTP"><img alt="ENTP" style="width:100%" src="../img/ndg_entp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span th:text="|${entj}%|"></span>
+                                    <span style="display:none" th:text="|${entj}%|"></span>
                                     <a href="/types/ENTJ"><img alt="ENTJ" style="width:100%" src="../img/ndg_entj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span> </span>
+                                    <span style="display:none" th:text="|${istj}%|"></span>
                                     <a href="/types/ISTJ"><img alt="ISTJ" style="width:100%" src="../img/ndg_istj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span> </span>
+                                    <span style="display:none" th:text="|${istp}%|"></span>
                                     <a href="/types/ISTP"><img alt="ISTP" style="width:100%" src="../img/ndg_istp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span> </span>
+                                    <span style="display:none" th:text="|${isfj}%|"></span>
                                     <a href="/types/ISFJ"><img alt="ISFJ" style="width:100%" src="../img/ndg_isfj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span> </span>
+                                    <span style="display:none" th:text="|${isfp}%|"></span>
                                     <a href="/types/ISFP"><img alt="ISFP" style="width:100%" src="../img/ndg_isfp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span> </span>
+                                    <span style="display:none" th:text="|${infj}%|"></span>
                                     <a href="/types/INFJ"><img alt="INFJ" style="width:100%" src="../img/ndg_infj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span th:text="|${infp}%|"></span>
+                                    <span style="display:none" th:text="|${infp}%|"></span>
                                     <a href="/types/INFP"><img alt="INFP" style="width:100%" src="../img/ndg_infp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span> </span>
+                                    <span style="display:none" th:text="|${intj}%|"></span>
                                     <a href="/types/INTJ"><img alt="INTJ" style="width:100%" src="../img/ndg_intj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
-                                    <span> </span>
+                                    <span style="display:none" th:text="|${intp}%|"></span>
                                     <a href="/types/INTP"><img alt="INTP" style="width:100%" src="../img/ndg_intp.png"/></a>
                                 </div>
                             </div>

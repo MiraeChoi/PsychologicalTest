@@ -56,24 +56,22 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
     window.onload = function() {
-        var span = document.querySelector(".ant-row > div > span"[1]);
-<!--        span.innerHTML="퍼센트(%)";-->
+
     }
 
     function percent() {
         var p = document.querySelector(".global-wrapper > p");
         var per = document.querySelectorAll(".ant-radio-button-wrapper > span")[1];
-        var span1 = document.querySelector(".ant-row > div > span");
-        var span2 = document.querySelectorAll(".ant-row > div > span")[1];
-        var span3 = document.querySelectorAll(".ant-row > div > span")[2];
-        var span4 = document.querySelectorAll(".ant-row > div > span")[3];
+        var span = document.querySelectorAll(".ant-row > div > span");
+<!--        alert("확인 : " + span.constructor.name);-->
 
         p.innerHTML="어떤 유형이 가장 많을까요?<br />농담곰유형은 재미용이라는 점, 아시죠? 😘";
         per.style.color="#ED5396";
-        span1.style.display="block";
-        span2.style.display="block";
-        span3.style.display="block";
-        span4.style.display="block";
+
+        for(var i = 0; i < span.length; i++) {
+            var item = span.item(i);
+            item.style.display="block";
+        }
     }
 
     function medal() {

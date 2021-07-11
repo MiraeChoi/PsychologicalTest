@@ -43,11 +43,13 @@ public class HomeController {
         UserData userData3 = new UserData("USER000000654321", 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 1, "ENTJ");
         UserData userData4 = new UserData("USER000000145728", 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, "ENFP");
         UserData userData5 = new UserData("USER000000145728", 3, 3, 3, 2, 3, 3, 2, 3, 3, 3, 2, 3, 2, "ISTJ");
+        UserData userData6 = new UserData("USER000000666666", 1, 4, 1, 4, 1, 4, 1, 4, 1, 4, 1, 4, 1, "ENTJ");
         em.persist(userData1);
         em.persist(userData2);
         em.persist(userData3);
         em.persist(userData4);
         em.persist(userData5);
+        em.persist(userData6);
 
         em.flush();
         em.clear();

@@ -77,6 +77,14 @@
     function medal() {
         var p = document.querySelector(".global-wrapper > p");
         var select = document.getElementsByName("select")[1];
+        var span = document.querySelectorAll(".ant-row > div > span");
+
+        for(var i = 0; i < span.length; i++) {
+            var item = span.item(i);
+            item.style.display="none";
+        }
+
+
 
         p.innerHTML="먹는 데 가장 많은 돈을 지출하는 유형 순서입니다.<br />정확도가 떨어지므로 꼭 재미로만 참고합시다😁";
     }

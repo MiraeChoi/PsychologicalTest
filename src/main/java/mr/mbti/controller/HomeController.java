@@ -104,6 +104,10 @@ public class HomeController {
         model.addAttribute("infp", form.format((float)(infpCount)/userCount * 100));
         model.addAttribute("infj", form.format((float)(infjCount)/userCount * 100));
 
+        model.addAttribute("gold", "infp");
+        model.addAttribute("silver", "intj");
+        model.addAttribute("bronze", "esfp");
+
         return "types";
     }
 

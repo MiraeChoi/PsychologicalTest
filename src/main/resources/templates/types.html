@@ -84,7 +84,8 @@
             item.style.display="none";
         }
 
-
+        var gold = document.getElementById("gold");
+        alert("확인 : " + gold);
 
         p.innerHTML="먹는 데 가장 많은 돈을 지출하는 유형 순서입니다.<br />정확도가 떨어지므로 꼭 재미로만 참고합시다😁";
     }
@@ -128,6 +129,7 @@
                             <div class="ant-row" style="margin-top:-8px;margin-bottom:-8px;">
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${estp}%|"></span>
+                                    <input type="hidden" id="gold" th:text="${gold}">
                                     <a href="/types/ESTP"><img alt="ESTP" style="width:100%" src="../img/ndg_estp.png"/></a>
                                 </div>
 

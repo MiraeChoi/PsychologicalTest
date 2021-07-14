@@ -85,7 +85,21 @@
         }
 
         var gold = document.getElementById("gold");
+        var silver = document.getElementById("silver");
+        var bronze = document.getElementById("bronze");
         alert("확인 : " + gold);
+
+        for(var i = 0; i < span.length; i++) {
+            var item = span.item(i);
+
+            if(gold.equals(item)) {
+                item.style.display="block";
+            } else if(silver.equals(item)) {
+                item.style.display="block";
+            } else if(bronze.equals(item)) {
+                item.style.display="block";
+            }
+        }
 
         p.innerHTML="먹는 데 가장 많은 돈을 지출하는 유형 순서입니다.<br />정확도가 떨어지므로 꼭 재미로만 참고합시다😁";
     }

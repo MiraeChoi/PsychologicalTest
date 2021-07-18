@@ -14,6 +14,8 @@ import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -60,6 +62,8 @@ public class HomeController {
                 .getSingleResult();
         //        long infp = em.createQuery("select COUNT(*) from UserData u where result like '%INFP%'", Long.class).getSingleResult();
 
+        HashMap<Integer, Long> typesCount = new HashMap<>();
+
         long estpCount = 0, estjCount = 0, esfpCount = 0, esfjCount = 0, entpCount = 0, entjCount = 0, enfpCount = 0, enfjCount = 0;
         long istpCount = 0, istjCount = 0, isfpCount = 0, isfjCount = 0, intpCount = 0, intjCount = 0, infpCount = 0, infjCount = 0;
 
@@ -81,6 +85,50 @@ public class HomeController {
             if (userList.get(i).getResult().equals("INTJ")) intjCount++;
             if (userList.get(i).getResult().equals("INFP")) infpCount++;
             if (userList.get(i).getResult().equals("INFJ")) infjCount++;
+        }
+
+        typesCount.put(0, estpCount);
+        typesCount.put(1, estjCount);
+        typesCount.put(2, esfpCount);
+        typesCount.put(3, esfjCount);
+        typesCount.put(4, entpCount);
+        typesCount.put(5, entjCount);
+        typesCount.put(6, enfpCount);
+        typesCount.put(7, enfjCount);
+
+        typesCount.put(8, istpCount);
+        typesCount.put(9, istjCount);
+        typesCount.put(10, isfpCount);
+        typesCount.put(11, isfjCount);
+        typesCount.put(12, intpCount);
+        typesCount.put(13, intjCount);
+        typesCount.put(14, infpCount);
+        typesCount.put(15, infjCount);
+
+//        for(int i = 0; i < 16; i++) {
+//            typesCount.put("ESTP", estpCount);
+//            typesCount.put("ESTJ", estjCount);
+//            typesCount.put("ESFP", esfpCount);
+//            typesCount.put("ESFJ", esfjCount);
+//            typesCount.put("ENTP", entpCount);
+//            typesCount.put("ENTJ", entjCount);
+//            typesCount.put("ENFP", enfpCount);
+//            typesCount.put("ENFJ", enfjCount);
+//
+//            typesCount.put("ISTP", istpCount);
+//            typesCount.put("ISTJ", istjCount);
+//            typesCount.put("ISFP", isfpCount);
+//            typesCount.put("ISFJ", isfjCount);
+//            typesCount.put("INTP", intpCount);
+//            typesCount.put("INTJ", intjCount);
+//            typesCount.put("INFP", infpCount);
+//            typesCount.put("INFJ", infjCount);
+//        }
+        String gold = "", silver = "", bronze = "";
+
+        for(int i = 0; i < typesCount.size(); i++) {
+            typesCount.get(i);
+            log.info("확인용 : " + typesCount.get(i));
         }
 
         DecimalFormat form = new DecimalFormat("#.##");

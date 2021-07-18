@@ -67,22 +67,6 @@
     function percent() {
         var span = document.querySelectorAll(".ant-row > div > span");
 
-        var gold = document.getElementById("gold").value;
-        var silver = document.getElementById("silver").value;
-        var bronze = document.getElementById("bronze").value;
-
-        for(var i = 0; i < span.length; i++) {
-            var item = span.item(i);
-
-            if(gold.equals(item)) {
-                item.style.display="none";
-            } else if(silver.equals(item)) {
-                item.style.display="none";
-            } else if(bronze.equals(item)) {
-                item.style.display="none";
-            }
-        }
-
         var p = document.querySelector(".global-wrapper > p");
         var per = document.querySelectorAll(".ant-radio-button-wrapper > span")[1];
         var span = document.querySelectorAll(".ant-row > div > span");
@@ -106,26 +90,6 @@
             item.style.display="none";
         }
 
-        var gold = document.getElementById("gold").value;
-        var silver = document.getElementById("silver").value;
-        var bronze = document.getElementById("bronze").value;
-
-        for(var i = 0; i < span.length; i++) {
-            var item = span.item(i);
-
-            if(gold.equals(item)) {
-                item.innerHTML="<img src='../img/gold.png'>";
-                alert("확인 : " + gold);
-
-                item.style.display="block";
-            } else if(silver.equals(item)) {
-                item.innerHTML="<img src='../img/silver.png'>";
-                item.style.display="block";
-            } else if(bronze.equals(item)) {
-                item.innerHTML="<img src='../img/bronze.png'>";
-                item.style.display="block";
-            }
-        }
 
         p.innerHTML="먹는 데 가장 많은 돈을 지출하는 유형 순서입니다.<br />정확도가 떨어지므로 꼭 재미로만 참고합시다😁";
     }
@@ -169,19 +133,19 @@
                             <div class="ant-row" style="margin-top:-8px;margin-bottom:-8px;">
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${estp}%|"></span>
-                                    <input type="hidden" id="gold" th:text="${gold}">
+                                    <input type="hidden" id="gold" value="gold">
                                     <a href="/types/ESTP"><img alt="ESTP" style="width:100%" src="../img/ndg_estp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${estj}%|"></span>
-                                    <input type="hidden" id="silver" th:text="${silver}">
+
                                     <a href="/types/ESTJ"><img alt="ESTJ" style="width:100%" src="../img/ndg_estj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${esfp}%|"></span>
-                                    <input type="hidden" id="bronze" th:text="${bronze}">
+
                                     <a href="/types/ESFP"><img alt="ESFP" style="width:100%" src="../img/ndg_esfp.png"/></a>
                                 </div>
 

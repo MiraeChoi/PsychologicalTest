@@ -124,12 +124,27 @@ public class HomeController {
 //            typesCount.put("INFP", infpCount);
 //            typesCount.put("INFJ", infjCount);
 //        }
+
+        long temp1 = Long.MIN_VALUE, temp2 = Long.MIN_VALUE, temp3 = Long.MIN_VALUE;
         String gold = "", silver = "", bronze = "";
+        int[] rank = {1, 1, 1, 1, 1, 1, 1, 1,
+                      1, 1, 1, 1, 1, 1, 1, 1};
 
         for(int i = 0; i < typesCount.size(); i++) {
-            typesCount.get(i);
-            log.info("확인용 : " + typesCount.get(i));
+            rank[i] = 1;
+
+            for(int j = 0; j < typesCount.size(); j++) {
+                if(typesCount.get(i) < typesCount.get(j)) rank[i]++;
+            }
         }
+
+        for(int i = 0; i < typesCount.size(); i++) {
+            log.info(typesCount.get(i) + " / " + rank[i] + "등");
+        }
+
+        log.info("확인1 : " + temp1);
+        log.info("확인2 : " + temp2);
+        log.info("확인3 : " + temp3);
 
         DecimalFormat form = new DecimalFormat("#.##");
 

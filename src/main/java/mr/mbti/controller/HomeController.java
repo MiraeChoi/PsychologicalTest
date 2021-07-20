@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -127,19 +128,29 @@ public class HomeController {
 
         long temp1 = Long.MIN_VALUE, temp2 = Long.MIN_VALUE, temp3 = Long.MIN_VALUE;
         String gold = "", silver = "", bronze = "";
-        int[] rank = {1, 1, 1, 1, 1, 1, 1, 1,
-                      1, 1, 1, 1, 1, 1, 1, 1};
+        int[] rank = new int[16];
 
         for(int i = 0; i < typesCount.size(); i++) {
-            rank[i] = 1;
+            rank[i] = 0;
 
             for(int j = 0; j < typesCount.size(); j++) {
                 if(typesCount.get(i) < typesCount.get(j)) rank[i]++;
+                else if(typesCount.get(i) == typesCount.get(j)) rank[j]++;
             }
         }
 
         for(int i = 0; i < typesCount.size(); i++) {
             log.info(typesCount.get(i) + " / " + rank[i] + "등");
+        }
+
+        for(int i = 0; i < typesCount.size(); i++) {
+            if(rank[i] == 1) {
+                gold = getKey(typesCount.get(i));
+            } else if(rank[i] == 2) {
+                silver = typesCount.keySet().toString();
+            } else if(rank[i] == 3) {
+                bronze = typesCount.keySet().toString();
+            }
         }
 
         log.info("확인1 : " + temp1);

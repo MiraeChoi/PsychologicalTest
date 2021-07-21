@@ -14,10 +14,8 @@ import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+import java.util.Map.Entry;
 
 @Controller
 @Slf4j
@@ -63,7 +61,7 @@ public class HomeController {
                 .getSingleResult();
         //        long infp = em.createQuery("select COUNT(*) from UserData u where result like '%INFP%'", Long.class).getSingleResult();
 
-        HashMap<Integer, Long> typesCount = new HashMap<>();
+        Map<Integer, Long> typesCount = new HashMap<>();
 
         long estpCount = 0, estjCount = 0, esfpCount = 0, esfjCount = 0, entpCount = 0, entjCount = 0, enfpCount = 0, enfjCount = 0;
         long istpCount = 0, istjCount = 0, isfpCount = 0, isfjCount = 0, intpCount = 0, intjCount = 0, infpCount = 0, infjCount = 0;
@@ -143,19 +141,25 @@ public class HomeController {
             log.info(typesCount.get(i) + " / " + rank[i] + "등");
         }
 
-        for(int i = 0; i < typesCount.size(); i++) {
-            if(rank[i] == 1) {
-                gold = getKey(typesCount.get(i));
-            } else if(rank[i] == 2) {
-                silver = typesCount.keySet().toString();
-            } else if(rank[i] == 3) {
-                bronze = typesCount.keySet().toString();
-            }
-        }
+        int first = 0, second = 0, third = 0;
 
-        log.info("확인1 : " + temp1);
-        log.info("확인2 : " + temp2);
-        log.info("확인3 : " + temp3);
+//        for(int i = 0; i < typesCount.size(); i++) {
+//            if(rank[i] == 1) {
+//                i = first;
+//            } else if(rank[i] == 2) {
+//                i = second;
+//            } else if(rank[i] == 3) {
+//                i = third;
+//            }
+//        }
+//
+//        gold = typesCount.get(first).toString();
+//        silver = typesCount.get(second).toString();
+//        bronze = typesCount.get(third).toString();
+
+        log.info("gold : " + gold);
+        log.info("silver : " + silver);
+        log.info("bronze : " + bronze);
 
         DecimalFormat form = new DecimalFormat("#.##");
 

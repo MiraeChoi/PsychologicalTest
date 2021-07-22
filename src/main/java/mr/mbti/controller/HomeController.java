@@ -62,6 +62,7 @@ public class HomeController {
         //        long infp = em.createQuery("select COUNT(*) from UserData u where result like '%INFP%'", Long.class).getSingleResult();
 
         Map<Integer, Long> typesCount = new HashMap<>();
+        Map<Integer, String> typesMap = new HashMap<>();
 
         long estpCount = 0, estjCount = 0, esfpCount = 0, esfjCount = 0, entpCount = 0, entjCount = 0, enfpCount = 0, enfjCount = 0;
         long istpCount = 0, istjCount = 0, isfpCount = 0, isfjCount = 0, intpCount = 0, intjCount = 0, infpCount = 0, infjCount = 0;
@@ -104,25 +105,23 @@ public class HomeController {
         typesCount.put(14, infpCount);
         typesCount.put(15, infjCount);
 
-//        for(int i = 0; i < 16; i++) {
-//            typesCount.put("ESTP", estpCount);
-//            typesCount.put("ESTJ", estjCount);
-//            typesCount.put("ESFP", esfpCount);
-//            typesCount.put("ESFJ", esfjCount);
-//            typesCount.put("ENTP", entpCount);
-//            typesCount.put("ENTJ", entjCount);
-//            typesCount.put("ENFP", enfpCount);
-//            typesCount.put("ENFJ", enfjCount);
-//
-//            typesCount.put("ISTP", istpCount);
-//            typesCount.put("ISTJ", istjCount);
-//            typesCount.put("ISFP", isfpCount);
-//            typesCount.put("ISFJ", isfjCount);
-//            typesCount.put("INTP", intpCount);
-//            typesCount.put("INTJ", intjCount);
-//            typesCount.put("INFP", infpCount);
-//            typesCount.put("INFJ", infjCount);
-//        }
+        typesMap.put(0, "ESTP");
+        typesMap.put(1, "ESTJ");
+        typesMap.put(2, "ESFP");
+        typesMap.put(3, "ESFJ");
+        typesMap.put(4, "ENTP");
+        typesMap.put(5, "ENTJ");
+        typesMap.put(6, "ENFP");
+        typesMap.put(7, "ENFJ");
+
+        typesMap.put(8, "ISTP");
+        typesMap.put(9, "ISTJ");
+        typesMap.put(10, "ISFP");
+        typesMap.put(11, "ISFJ");
+        typesMap.put(12, "INTP");
+        typesMap.put(13, "INTJ");
+        typesMap.put(14, "INFP");
+        typesMap.put(15, "INFJ");
 
         long temp1 = Long.MIN_VALUE, temp2 = Long.MIN_VALUE, temp3 = Long.MIN_VALUE;
         String gold = "", silver = "", bronze = "";
@@ -142,20 +141,25 @@ public class HomeController {
         }
 
         int first = 0, second = 0, third = 0;
+        log.info("typesCount.size() : " + typesCount.size());
 
-//        for(int i = 0; i < typesCount.size(); i++) {
-//            if(rank[i] == 1) {
-//                i = first;
-//            } else if(rank[i] == 2) {
-//                i = second;
-//            } else if(rank[i] == 3) {
-//                i = third;
-//            }
-//        }
-//
-//        gold = typesCount.get(first).toString();
-//        silver = typesCount.get(second).toString();
-//        bronze = typesCount.get(third).toString();
+        for(int i = 0; i < typesCount.size(); i++) {
+            if(rank[i] == 1) {
+                first = i;
+            } else if(rank[i] == 2) {
+                second = i;
+            } else if(rank[i] == 3) {
+                third = i;
+            }
+        }
+
+        log.info("first : " + first);
+        log.info("second : " + second);
+        log.info("third : " + third);
+
+        gold = typesMap.get(first);
+        silver = typesMap.get(second);
+        bronze = typesMap.get(third);
 
         log.info("gold : " + gold);
         log.info("silver : " + silver);

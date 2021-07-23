@@ -54,7 +54,7 @@
 <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async=""></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script>
+<script th:inline="javascript">
     window.onload = function() {
         var span = document.querySelectorAll(".ant-row > div > span");
 
@@ -82,16 +82,28 @@
 
     function medal() {
         var p = document.querySelector(".global-wrapper > p");
-        var select = document.getElementsByName("select")[1];
+        var per = document.querySelectorAll(".ant-radio-button-wrapper > span")[1];
         var span = document.querySelectorAll(".ant-row > div > span");
+        var select = document.getElementsByName("select")[1];
+
+        per.style.color="black";
 
         for(var i = 0; i < span.length; i++) {
             var item = span.item(i);
             item.style.display="none";
         }
 
-
         p.innerHTML="먹는 데 가장 많은 돈을 지출하는 유형 순서입니다.<br />정확도가 떨어지므로 꼭 재미로만 참고합시다😁";
+
+        for(var i = 0; i < span.length; i++) {
+            var img = document.querySelectorAll(".ant-col > a > img")[i];
+            var alt_msg = img.alt;
+
+            if(alt_msg == ${gold}) {
+                alert("와앙");
+            }
+        }
+
     }
 </script>
 
@@ -139,7 +151,6 @@
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${estj}%|"></span>
-
                                     <a href="/types/ESTJ"><img alt="ESTJ" style="width:100%" src="../img/ndg_estj.png"/></a>
                                 </div>
 

@@ -95,11 +95,15 @@
 
         p.innerHTML="먹는 데 가장 많은 돈을 지출하는 유형 순서입니다.<br />정확도가 떨어지므로 꼭 재미로만 참고합시다😁";
 
+        /*<![CDATA[*/
+        var gold = /*[[ ${gold} ]]*/;
+        /*]]*/
+
         for(var i = 0; i < span.length; i++) {
             var img = document.querySelectorAll(".ant-col > a > img")[i];
             var alt_msg = img.alt;
 
-            if(alt_msg == ${gold}) {
+            if(alt_msg == gold) {
                 alert("와앙");
             }
         }

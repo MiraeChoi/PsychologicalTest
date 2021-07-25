@@ -100,11 +100,12 @@
         /*]]*/
 
         for(var i = 0; i < span.length; i++) {
+            var item = span.item(i);
             var img = document.querySelectorAll(".ant-col > a > img")[i];
             var alt_msg = img.alt;
 
             if(alt_msg == gold) {
-                alert("와앙");
+                item.innerHTML="<img src='../img/gold.png'>";
             }
         }
 

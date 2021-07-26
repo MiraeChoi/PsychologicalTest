@@ -97,6 +97,8 @@
 
         /*<![CDATA[*/
         var gold = /*[[ ${gold} ]]*/;
+        var silver = /*[[ ${silver} ]]*/;
+        var bronze = /*[[ ${bronze} ]]*/;
         /*]]*/
 
         for(var i = 0; i < span.length; i++) {
@@ -106,6 +108,13 @@
 
             if(alt_msg == gold) {
                 item.innerHTML="<img src='../img/gold.png'>";
+                item.style.display="block";
+            } else if(alt_msg == silver) {
+                item.innerHTML="<img src='../img/silver.png'>";
+                item.style.display="block";
+            } else if(alt_msg == bronze) {
+                item.innerHTML="<img src='../img/bronze.png'>";
+                item.style.display="block";
             }
         }
 
@@ -150,7 +159,6 @@
                             <div class="ant-row" style="margin-top:-8px;margin-bottom:-8px;">
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${estp}%|"></span>
-                                    <input type="hidden" id="gold" value="gold">
                                     <a href="/types/ESTP"><img alt="ESTP" style="width:100%" src="../img/ndg_estp.png"/></a>
                                 </div>
 

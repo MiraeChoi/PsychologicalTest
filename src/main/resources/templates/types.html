@@ -106,16 +106,16 @@
             var img = document.querySelectorAll(".ant-col > a > img")[i];
             var alt_msg = img.alt;
 
-            if(alt_msg == gold) {
-                item.innerHTML="<img src='../img/gold.png'>";
-                item.style.display="block";
-            } else if(alt_msg == silver) {
-                item.innerHTML="<img src='../img/silver.png'>";
-                item.style.display="block";
-            } else if(alt_msg == bronze) {
-                item.innerHTML="<img src='../img/bronze.png'>";
-                item.style.display="block";
-            }
+<!--            if(alt_msg == gold) {-->
+<!--                item.innerHTML="<img src='../img/gold.png'>";-->
+<!--                item.style.display="block";-->
+<!--            } else if(alt_msg == silver) {-->
+<!--                item.innerHTML="<img src='../img/silver.png'>";-->
+<!--                item.style.display="block";-->
+<!--            } else if(alt_msg == bronze) {-->
+<!--                item.innerHTML="<img src='../img/bronze.png'>";-->
+<!--                item.style.display="block";-->
+<!--            }-->
         }
 
     }
@@ -159,6 +159,9 @@
                             <div class="ant-row" style="margin-top:-8px;margin-bottom:-8px;">
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${estp}%|"></span>
+                                    <span th:if="${gold.equals('ESTP')}"><img src="../img/gold.png"></span>
+                                    <span th:if="${silver.equals('ESTP')}"><img src="../img/silver.png"></span>
+                                    <span th:if="${bronze.equals('ESTP')}"><img src="../img/bronze.png"></span>
                                     <a href="/types/ESTP"><img alt="ESTP" style="width:100%" src="../img/ndg_estp.png"/></a>
                                 </div>
 
@@ -195,6 +198,9 @@
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${entj}%|"></span>
+                                    <span style="display:none" th:if="${gold.equals('ENTJ')}"><img src="../img/gold.png"></span>
+                                    <span style="display:none" th:if="${silver.equals('ENTJ')}"><img src="../img/silver.png"></span>
+                                    <span style="display:none" th:if="${bronze.equals('ENTJ')}"><img src="../img/bronze.png"></span>
                                     <a href="/types/ENTJ"><img alt="ENTJ" style="width:100%" src="../img/ndg_entj.png"/></a>
                                 </div>
 

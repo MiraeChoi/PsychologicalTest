@@ -13,6 +13,7 @@
 
     <script>
         window.onload = function() {
+            alert("들어왔다");
             <!-- select button -->
             var q01 = sessionStorage.getItem('Q01_A');
 
@@ -24,14 +25,12 @@
                 document.getElementById(id).style.outline="0";
             }
 
-            sessionStorage.setItem('E', 0);
-            sessionStorage.setItem('I', 0);
+
+            alert("나갈까?");
         }
 
         function page(page) {
-            if(page == 'prev') {
-
-            } else if(page == 'next') {
+            if(page == 'next') {
                 if(sessionStorage.getItem('Q01_A') != null) {
                     location.href = '/test2';
                 }
@@ -39,9 +38,17 @@
         }
 
         function nextp(val) {
+            alert("워후예");
+
+            sessionStorage.setItem('E', 0);
+            sessionStorage.setItem('I', 0);
+
             if(sessionStorage.getItem('Q01_A') != null) {
                 sessionStorage.removeItem('Q01_A');
             }
+
+            sessionStorage.setItem('E', 0);
+            sessionStorage.setItem('I', 0);
 
             var e = sessionStorage.getItem('E');
             var i = sessionStorage.getItem('I');
@@ -92,7 +99,7 @@
     <section class="ant-layout">
         <header class="ant-layout-header global-header">
             <div>
-                <button class="page_btn prev_page" id="prev_page" onclick="page('prev');"><</button>
+                <button class="page_btn prev_page" id="prev_page"><</button>
                 <h1 style="display:inline; position:relative; top:13px;"><a>🐽 농담곰유형테스트</a></h1>
                 <button class="page_btn next_page" id="next_page" onclick="page('next');">></button>
             </div>

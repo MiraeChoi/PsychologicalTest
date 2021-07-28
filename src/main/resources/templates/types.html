@@ -65,11 +65,15 @@
     }
 
     function percent() {
-        var span = document.querySelectorAll(".ant-row > div > span");
-
         var p = document.querySelector(".global-wrapper > p");
         var per = document.querySelectorAll(".ant-radio-button-wrapper > span")[1];
         var span = document.querySelectorAll(".ant-row > div > span");
+        var div = document.querySelectorAll(".ant-row > div > div");
+
+        for(var i = 0; i < div.length; i++) {
+            var item = div.item(i);
+            item.style.display="none";
+        }
 
         p.innerHTML="어떤 유형이 가장 많을까요?<br />농담곰유형은 재미용이라는 점, 아시죠? 😘";
         per.style.color="#ED5396";
@@ -84,7 +88,7 @@
         var p = document.querySelector(".global-wrapper > p");
         var per = document.querySelectorAll(".ant-radio-button-wrapper > span")[1];
         var span = document.querySelectorAll(".ant-row > div > span");
-        var select = document.getElementsByName("select")[1];
+        var div = document.querySelectorAll(".ant-row > div > div");
 
         per.style.color="black";
 
@@ -101,8 +105,8 @@
         var bronze = /*[[ ${bronze} ]]*/;
         /*]]*/
 
-        for(var i = 0; i < span.length; i++) {
-            var item = span.item(i);
+        for(var i = 0; i < div.length; i++) {
+            var item = div.item(i);
             var img = document.querySelectorAll(".ant-col > a > img")[i];
             var alt_msg = img.alt;
 
@@ -116,6 +120,8 @@
 <!--                item.innerHTML="<img src='../img/bronze.png'>";-->
 <!--                item.style.display="block";-->
 <!--            }-->
+
+            item.style.display="block";
         }
 
     }
@@ -159,88 +165,129 @@
                             <div class="ant-row" style="margin-top:-8px;margin-bottom:-8px;">
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${estp}%|"></span>
-                                    <span th:if="${gold.equals('ESTP')}"><img src="../img/gold.png"></span>
-                                    <span th:if="${silver.equals('ESTP')}"><img src="../img/silver.png"></span>
-                                    <span th:if="${bronze.equals('ESTP')}"><img src="../img/bronze.png"></span>
+                                    <div style="display:none" th:if="${gold.equals('ESTP')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ESTP')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ESTP')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ESTP"><img alt="ESTP" style="width:100%" src="../img/ndg_estp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${estj}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('ESTJ')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ESTJ')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ESTJ')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ESTJ"><img alt="ESTJ" style="width:100%" src="../img/ndg_estj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${esfp}%|"></span>
-
+                                    <div style="display:none" th:if="${gold.equals('ESFP')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ESFP')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ESFP')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ESFP"><img alt="ESFP" style="width:100%" src="../img/ndg_esfp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${esfj}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('ESFJ')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ESFJ')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ESFJ')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ESFJ"><img alt="ESFJ" style="width:100%" src="../img/ndg_esfj.png"/></a>
                                 </div><br />
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${enfp}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('ENFP')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ENFP')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ENFP')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ENFP"><img alt="ENFP" style="width:100%" src="../img/ndg_enfp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${enfj}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('ENFJ')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ENFJ')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ENFJ')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ENFJ"><img alt="ENFJ" style="width:100%" src="../img/ndg_enfj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${entp}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('ENTP')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ENTP')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ENTP')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ENTP"><img alt="ENTP" style="width:100%" src="../img/ndg_entp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${entj}%|"></span>
-                                    <span style="display:none" th:if="${gold.equals('ENTJ')}"><img src="../img/gold.png"></span>
-                                    <span style="display:none" th:if="${silver.equals('ENTJ')}"><img src="../img/silver.png"></span>
-                                    <span style="display:none" th:if="${bronze.equals('ENTJ')}"><img src="../img/bronze.png"></span>
+                                    <div style="display:none" th:if="${gold.equals('ENTJ')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ENTJ')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ENTJ')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ENTJ"><img alt="ENTJ" style="width:100%" src="../img/ndg_entj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${istj}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('ISTJ')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ISTJ')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ISTJ')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ISTJ"><img alt="ISTJ" style="width:100%" src="../img/ndg_istj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${istp}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('ISTP')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ISTP')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ISTP')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ISTP"><img alt="ISTP" style="width:100%" src="../img/ndg_istp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${isfj}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('ISFJ')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ISFJ')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ISFJ')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ISFJ"><img alt="ISFJ" style="width:100%" src="../img/ndg_isfj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${isfp}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('ISFP')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('ISFP')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('ISFP')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/ISFP"><img alt="ISFP" style="width:100%" src="../img/ndg_isfp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${infj}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('INFJ')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('INFJ')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('INFJ')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/INFJ"><img alt="INFJ" style="width:100%" src="../img/ndg_infj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${infp}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('INFP')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('INFP')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('INFP')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/INFP"><img alt="INFP" style="width:100%" src="../img/ndg_infp.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${intj}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('INTJ')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('INTJ')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('INTJ')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/INTJ"><img alt="INTJ" style="width:100%" src="../img/ndg_intj.png"/></a>
                                 </div>
 
                                 <div style="padding-top:8px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-self:flex-end" class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-md-6 ant-col-lg-6 ant-col-xl-6">
                                     <span style="display:none" th:text="|${intp}%|"></span>
+                                    <div style="display:none" th:if="${gold.equals('INTP')}"><img src="../img/gold.png"></div>
+                                    <div style="display:none" th:if="${silver.equals('INTP')}"><img src="../img/silver.png"></div>
+                                    <div style="display:none" th:if="${bronze.equals('INTP')}"><img src="../img/bronze.png"></div>
                                     <a href="/types/INTP"><img alt="INTP" style="width:100%" src="../img/ndg_intp.png"/></a>
                                 </div>
                             </div>

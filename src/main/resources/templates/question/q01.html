@@ -13,7 +13,6 @@
 
     <script>
         window.onload = function() {
-            alert("들어왔다");
             <!-- select button -->
             var q01 = sessionStorage.getItem('Q01_A');
 
@@ -24,12 +23,11 @@
                 document.getElementById(id).style.color="#E12B7F";
                 document.getElementById(id).style.outline="0";
             }
-
-
-            alert("나갈까?");
         }
 
         function page(page) {
+            alert("페이지당");
+
             if(page == 'next') {
                 if(sessionStorage.getItem('Q01_A') != null) {
                     location.href = '/test2';

@@ -14,15 +14,8 @@
     <script>
         window.onload = function() {
             <!-- select button -->
-            var q01 = sessionStorage.getItem('Q01_A');
-
-            if(q01 != null) {
-                var id = "btn" + sessionStorage.getItem('Q01_A');
-
-                document.getElementById(id).style.border="3px solid #E12B7F";
-                document.getElementById(id).style.color="#E12B7F";
-                document.getElementById(id).style.outline="0";
-            }
+            sessionStorage.setItem('E', 0);
+            sessionStorage.setItem('I', 0);
         }
 
         function page(page) {

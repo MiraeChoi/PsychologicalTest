@@ -14,32 +14,32 @@
     <script>
         window.onload = function() {
             <!-- select button -->
+            var q01 = sessionStorage.getItem('Q01_A');
+
+            if(q01 != null) {
+                var id = "btn" + sessionStorage.getItem('Q01_A');
+
+                document.getElementById(id).style.border="3px solid #E12B7F";
+                document.getElementById(id).style.color="#E12B7F";
+                document.getElementById(id).style.outline="0";
+            }
+
             sessionStorage.setItem('E', 0);
             sessionStorage.setItem('I', 0);
         }
 
         function page(page) {
-            alert("페이지당");
-
             if(page == 'next') {
-                if(sessionStorage.getItem('Q01_A') != null) {
+                if(sessionStorage.getItem('Q02_A') != null) {
                     location.href = '/test2';
                 }
             }
         }
 
         function nextp(val) {
-            alert("워후예");
-
-            sessionStorage.setItem('E', 0);
-            sessionStorage.setItem('I', 0);
-
             if(sessionStorage.getItem('Q01_A') != null) {
                 sessionStorage.removeItem('Q01_A');
             }
-
-            sessionStorage.setItem('E', 0);
-            sessionStorage.setItem('I', 0);
 
             var e = sessionStorage.getItem('E');
             var i = sessionStorage.getItem('I');
@@ -52,10 +52,10 @@
                 sessionStorage.setItem('I', Number(i + 1));
             } else if(val == 3) {
                 sessionStorage.setItem('Q01_A', 3);
-                sessionStorage.setItem('I', Number(i + 1);
+                sessionStorage.setItem('E', Number(e + 1));
             } else if(val == 4) {
                 sessionStorage.setItem('Q01_A', 4);
-                sessionStorage.setItem('E', Number(e + 1));
+                sessionStorage.setItem('I', Number(i + 1));
             }
             location.href = '/test2';
         }
@@ -90,7 +90,7 @@
     <section class="ant-layout">
         <header class="ant-layout-header global-header">
             <div>
-                <button class="page_btn prev_page" id="prev_page"><</button>
+                <button class="page_btn prev_page" id="prev_page" onclick="page('prev');"><</button>
                 <h1 style="display:inline; position:relative; top:13px;"><a>🐽 농담곰유형테스트</a></h1>
                 <button class="page_btn next_page" id="next_page" onclick="page('next');">></button>
             </div>

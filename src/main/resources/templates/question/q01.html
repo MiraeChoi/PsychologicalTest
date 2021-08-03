@@ -23,9 +23,6 @@
                 document.getElementById(id).style.color="#E12B7F";
                 document.getElementById(id).style.outline="0";
             }
-
-            sessionStorage.setItem('E', 0);
-            sessionStorage.setItem('I', 0);
         }
 
         function page(page) {
@@ -37,6 +34,9 @@
         }
 
         function nextp(val) {
+            sessionStorage.setItem('E', 0);
+            sessionStorage.setItem('I', 0);
+
             if(sessionStorage.getItem('Q01_A') != null) {
                 sessionStorage.removeItem('Q01_A');
             }

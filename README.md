@@ -1,7 +1,7 @@
 # PsychologicalTest
 2021.02.19 ~ 2021.08.04<br>
 토이 프로젝트 - MBTI 기반 테스트 클론코딩<br>
-https://pigmbti.sayun.studio/
+참고 사이트 : https://pigmbti.sayun.studio/
 <br><br>
 
 ## 구현 기능
